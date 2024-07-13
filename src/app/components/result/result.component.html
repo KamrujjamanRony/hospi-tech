@@ -1,0 +1,586 @@
+<!-- Navbar -->
+<div class="bg-lime-500">
+  <div class="navbar max-w-5xl mx-auto" [class.hide-when-printing]="isPrinting">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h8m-8 6h16"
+            />
+          </svg>
+        </div>
+        <ul
+          tabindex="0"
+          class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+        >
+          <li>
+            <!-- Home link -->
+            <a
+              routerLink=""
+              type="button"
+              class="inline-block text-center my-1 rounded-full bg-fuchsia-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#14a44d] transition duration-150 ease-in-out hover:bg-fuchsia-500-600 hover:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] focus:bg-fuchsia-500-600 focus:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] focus:outline-none focus:ring-0 active:bg-fuchsia-500-700 active:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(20,164,77,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)]"
+            >
+              Back Home
+            </a>
+          </li>
+          <li>
+            <!-- Margin -->
+            <select
+              [(ngModel)]="margin"
+              (change)="onMarginChange(marginId)"
+              class="peer block min-h-[auto] w-full rounded border-gray-900 bg-transparent px-3 py-[0.32rem]"
+              id="margin1"
+              name="margin"
+              data-te-select-init
+            >
+              <option value="0" [attr.selected]="margin == '0' ? true : null">
+                Margin None
+              </option>
+              <option value="1" [attr.selected]="margin == '1' ? true : null">
+                Margin One
+              </option>
+              <option value="2" [attr.selected]="margin == '2' ? true : null">
+                Margin Two
+              </option>
+              <option value="3" [attr.selected]="margin == '3' ? true : null">
+                Margin Three
+              </option>
+              <option value="4" [attr.selected]="margin == '4' ? true : null">
+                Margin Four
+              </option>
+              <option value="5" [attr.selected]="margin == '5' ? true : null">
+                Margin Five
+              </option>
+              <option value="6" [attr.selected]="margin == '6' ? true : null">
+                Margin Six
+              </option>
+              <option value="7" [attr.selected]="margin == '7' ? true : null">
+                Margin Seven
+              </option>
+              <option value="8" [attr.selected]="margin == '8' ? true : null">
+                Margin Eight
+              </option>
+              <option value="9" [attr.selected]="margin == '9' ? true : null">
+                Margin Nine
+              </option>
+              <option value="10" [attr.selected]="margin == '10' ? true : null">
+                Margin Ten
+              </option>
+              <option value="11" [attr.selected]="margin == '11' ? true : null">
+                Margin Eleven
+              </option>
+              <option value="12" [attr.selected]="margin == '12' ? true : null">
+                Margin Twelve
+              </option>
+              <option value="13" [attr.selected]="margin == '13' ? true : null">
+                Margin Thirteen
+              </option>
+              <option value="14" [attr.selected]="margin == '14' ? true : null">
+                Margin Fourteen
+              </option>
+              <option value="15" [attr.selected]="margin == '15' ? true : null">
+                Margin Fifteen
+              </option>
+              <option value="16" [attr.selected]="margin == '16' ? true : null">
+                Margin Sixteen
+              </option>
+            </select>
+          </li>
+        </ul>
+      </div>
+      <a routerLink="" class="text-white font-bold cursor-pointer text-xl">{{
+        Company?.name
+      }}</a>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        <li>
+          <!-- Home link -->
+          <div
+            class="my-4 ml-20 pl-2 lg:my-0 lg:pl-2 lg:pr-1"
+            data-te-nav-item-ref
+          >
+            <a
+              routerLink=""
+              type="button"
+              class="inline-block rounded-full bg-fuchsia-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#14a44d] transition duration-150 ease-in-out hover:bg-fuchsia-500-600 hover:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] focus:bg-fuchsia-500-600 focus:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] focus:outline-none focus:ring-0 active:bg-fuchsia-500-700 active:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(20,164,77,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)]"
+            >
+              Back Home
+            </a>
+          </div>
+        </li>
+        <li>
+          <!-- Margin -->
+          <select
+            [(ngModel)]="margin"
+            (change)="onMarginChange(marginId)"
+            class="block min-h-[auto] rounded border-gray-900 py-[0.32rem]"
+            id="margin"
+            name="margin"
+            data-te-select-init
+          >
+            <option value="0" [attr.selected]="margin == '0' ? true : null">
+              Margin None
+            </option>
+            <option value="1" [attr.selected]="margin == '1' ? true : null">
+              Margin One
+            </option>
+            <option value="2" [attr.selected]="margin == '2' ? true : null">
+              Margin Two
+            </option>
+            <option value="3" [attr.selected]="margin == '3' ? true : null">
+              Margin Three
+            </option>
+            <option value="4" [attr.selected]="margin == '4' ? true : null">
+              Margin Four
+            </option>
+            <option value="5" [attr.selected]="margin == '5' ? true : null">
+              Margin Five
+            </option>
+            <option value="6" [attr.selected]="margin == '6' ? true : null">
+              Margin Six
+            </option>
+            <option value="7" [attr.selected]="margin == '7' ? true : null">
+              Margin Seven
+            </option>
+            <option value="8" [attr.selected]="margin == '8' ? true : null">
+              Margin Eight
+            </option>
+            <option value="9" [attr.selected]="margin == '9' ? true : null">
+              Margin Nine
+            </option>
+            <option value="10" [attr.selected]="margin == '10' ? true : null">
+              Margin Ten
+            </option>
+            <option value="11" [attr.selected]="margin == '11' ? true : null">
+              Margin Eleven
+            </option>
+            <option value="12" [attr.selected]="margin == '12' ? true : null">
+              Margin Twelve
+            </option>
+            <option value="13" [attr.selected]="margin == '13' ? true : null">
+              Margin Thirteen
+            </option>
+            <option value="14" [attr.selected]="margin == '14' ? true : null">
+              Margin Fourteen
+            </option>
+            <option value="15" [attr.selected]="margin == '15' ? true : null">
+              Margin Fifteen
+            </option>
+            <option value="16" [attr.selected]="margin == '16' ? true : null">
+              Margin Sixteen
+            </option>
+          </select>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-end">
+      <!-- Print -->
+      <div class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
+        <a
+          (click)="printPage()"
+          type="button"
+          class="cursor-pointer inline-block rounded-full bg-lime-50 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-neutral-800 shadow-[0_4px_9px_-4px_#cbcbcb] transition duration-150 ease-in-out hover:bg-lime-100 hover:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] focus:bg-lime-100 focus:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] focus:outline-none focus:ring-0 active:bg-lime-200 active:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(251,251,251,0.3)] dark:hover:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)] dark:focus:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)] dark:active:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)]"
+        >
+          Print Page
+        </a>
+      </div>
+      <!-- Log out Button -->
+      <button
+        type="button"
+        (click)="logOut()"
+        class="inline-block rounded bg-danger md:px-6 px-2 md:py-2 py-1 text-xs font-medium leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(220,76,100,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] mx-1 md:mx-2"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="w-5 h-5"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M15.75 2.25H21a.75.75 0 01.75.75v5.25a.75.75 0 01-1.5 0V4.81L8.03 17.03a.75.75 0 01-1.06-1.06L19.19 3.75h-3.44a.75.75 0 010-1.5zm-10.5 4.5a1.5 1.5 0 00-1.5 1.5v10.5a1.5 1.5 0 001.5 1.5h10.5a1.5 1.5 0 001.5-1.5V10.5a.75.75 0 011.5 0v8.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V8.25a3 3 0 013-3h8.25a.75.75 0 010 1.5H5.25z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Heading -->
+<div [class.margin-top-when-printing]="isPrinting">
+  <div
+    class="bg-black p-[2px] rounded-md max-w-4xl mx-auto text-sm mt-5"
+    [class.black-when-printing]="isPrinting"
+  >
+    <div class="bg-white p-1 rounded-md shadow-md">
+      <div
+        class="flex md:flex-row flex-col justify-between"
+        [class.flex-when-printing]="isPrinting"
+      >
+        <div class="flex justify-between relative">
+          <p class="mr-2">
+            <span
+              >ID No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </span
+            >&nbsp;<span class="font-bold">{{ mainUI?.pid }}</span>
+          </p>
+          <p class="barCode pt-1">{{ mainUI?.pid }}</p>
+        </div>
+        @if (mainUI?.sampleID) {
+        <div class="flex justify-between relative">
+          <p class="mr-4">
+            <span>Customer ID: </span>
+            <span class="font-bold">{{ mainUI?.sampleID }}</span>
+          </p>
+        </div>
+        } @if (mainUI?.cabin) {
+        <div class="flex justify-between relative">
+          <p class="mr-4">
+            <span>Cabin No: </span>
+            <span class="font-bold">{{ mainUI?.cabin }}</span>
+          </p>
+        </div>
+        } @if (mainUI?.bed) {
+        <div class="flex justify-between relative">
+          <p class="mr-4">
+            <span>Bed No: </span>
+            <span class="font-bold">{{ mainUI?.bed }}</span>
+          </p>
+        </div>
+        } @if (mainUI?.rDate) {
+        <p>
+          <span>Received Date : </span
+          ><span>{{ transformDate(mainUI?.rDate) }}</span>
+        </p>
+        } @else {
+        <p>
+          <span>Date : </span><span>{{ getCurrentDate() }}</span>
+        </p>
+        }
+      </div>
+      <div
+        class="flex md:flex-row flex-col justify-between"
+        [class.flex-when-printing]="isPrinting"
+      >
+        <p>
+          <span
+            >Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </span
+          >&nbsp;<span>{{ mainUI?.name }}</span>
+        </p>
+        <div
+          class="flex md:flex-row flex-col justify-between w-60"
+          [class.flex-when-printing]="isPrinting"
+        >
+          <p>
+            <span>Age : </span><span>{{ mainUI?.age }}</span>
+          </p>
+          <p>
+            <span>Sex : </span><span>{{ mainUI?.sex }}</span>
+          </p>
+        </div>
+      </div>
+      <div class="flex justify-start">
+        <p><span>Refd. by &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </span>&nbsp;</p>
+        @if (refDoctor?.name) {
+        <p class="" [class.small-when-printing]="isPrinting">
+          {{ refDoctor.name }}
+        </p>
+        }
+      </div>
+      <div
+        class="flex md:flex-row flex-col justify-between"
+        [class.flex-when-printing]="isPrinting"
+      >
+        <p><span>Specimen &nbsp;&nbsp; : </span>&nbsp;<span>Blood</span></p>
+        @if (mainUI?.rDate) {
+        <p>
+          <span>Delivery Date : </span
+          ><span>{{ transformDate(mainUI?.date) }}</span>
+        </p>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="max-w-5xl mx-auto text-center">
+  <h1 class="text-sm text-green-800 my-2">
+    {{ jsonData?.title }}
+  </h1>
+</div>
+
+<!-- Chart -->
+@if (mainUI) {
+<div
+  class="max-w-2xl mx-auto relative h-[300px]"
+  [class.left-when-printing]="isPrinting"
+>
+  @if (companyID == 7) {
+  <canvasjs-chart [options]="chartOptions7"></canvasjs-chart>
+  } @else {
+  <canvasjs-chart [options]="chartOptions"></canvasjs-chart>
+  }
+  <div
+    class="lg:w-48 md:w-32 w-32 h-5 bg-white absolute bottom-0 xl:right-[-2%] lg:right-0 right-0"
+    [class.position-when-printing]="isPrinting"
+  ></div>
+</div>
+} @if (mainUI?.hb) {
+<p class="text-center font-bold">
+  Hb Conc in % = {{ mainUI?.hb }} @if (jsonData) {{{jsonData?.hb}}}
+</p>
+}
+
+<!-- Table -->
+<div class="flex flex-col max-w-2xl mx-auto">
+  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="overflow-hidden">
+        <table class="min-w-full text-left text-sm font-light">
+          <thead class="border-b font-medium border-gray-900">
+            <tr>
+              <th scope="col" class="px-6">Fractions</th>
+              <th scope="col" class="px-6">%</th>
+              <th scope="col" class="px-6">Ref. Values %</th>
+            </tr>
+          </thead>
+          @if (mainUI) {
+          <tbody>
+            @if (mainUI.hbBarts) {
+            <tr
+              class="border-b transition duration-300 ease-in-out hover:bg-lime-100 dark:hover:bg-lime-600"
+            >
+              <td class="whitespace-nowrap px-6 font-bold">Hb Barts</td>
+              <td class="whitespace-nowrap px-6 font-bold">
+                {{ (+mainUI.hbBarts).toFixed(1) }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-1 font-medium">
+                @if (jsonData) {{{jsonData?.hbBarts}}} @else {}
+              </td>
+            </tr>
+            } @if (mainUI.hbF) {
+            <tr
+              class="border-b transition duration-300 ease-in-out hover:bg-lime-100 dark:hover:bg-lime-600"
+            >
+              <td class="whitespace-nowrap px-6 font-bold">Hb F</td>
+              <td class="whitespace-nowrap px-6 font-bold">
+                {{ (+mainUI.hbF).toFixed(1) }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-1 font-medium">
+                @if (jsonData) {{{jsonData?.hbF}}} @else {<2}
+              </td>
+            </tr>
+            } @if (mainUI.hbJ) {
+            <tr
+              class="border-b transition duration-300 ease-in-out hover:bg-lime-100 dark:hover:bg-lime-600"
+            >
+              <td class="whitespace-nowrap px-6 font-bold">Hb J</td>
+              <td class="whitespace-nowrap px-6 font-bold">
+                {{ (+mainUI.hbJ).toFixed(1) }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-1 font-medium">
+                @if (jsonData) {{{jsonData?.hbJ}}} @else {}
+              </td>
+            </tr>
+            } @if (mainUI.hbA) {
+            <tr
+              class="border-b transition duration-300 ease-in-out hover:bg-lime-100 dark:hover:bg-lime-600"
+            >
+              <td class="whitespace-nowrap px-6 font-bold">Hb A</td>
+              <td class="whitespace-nowrap px-6 font-bold">
+                {{ (+mainUI.hbA).toFixed(1) }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-1 font-medium">
+                @if (jsonData) {{{jsonData?.hbA}}} @else {96.1-98.5}
+              </td>
+            </tr>
+            } @if (mainUI.hbL) {
+            <tr
+              class="border-b transition duration-300 ease-in-out hover:bg-lime-100 dark:hover:bg-lime-600"
+            >
+              <td class="whitespace-nowrap px-6 font-bold">Hb Lepore</td>
+              <td class="whitespace-nowrap px-6 font-bold">
+                {{ (+mainUI.hbL).toFixed(1) }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-1 font-medium">
+                @if (jsonData) {{{jsonData?.hbL}}} @else {}
+              </td>
+            </tr>
+            } @if (mainUI.hbA2) {
+            <tr
+              class="border-b transition duration-300 ease-in-out hover:bg-lime-100 dark:hover:bg-lime-600"
+            >
+              <td class="whitespace-nowrap px-6 font-bold">Hb A<sub>2</sub></td>
+              <td class="whitespace-nowrap px-6 font-bold">
+                {{ (+mainUI.hbA2).toFixed(1) }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-1 font-medium">
+                @if (jsonData) {{{jsonData?.hbA2}}} @else {2.2-4.0}
+              </td>
+            </tr>
+            } @if (mainUI.hbE) {
+            <tr
+              class="border-b transition duration-300 ease-in-out hover:bg-lime-100 dark:hover:bg-lime-600"
+            >
+              <td class="whitespace-nowrap px-6 font-bold">Hb E</td>
+              <td class="whitespace-nowrap px-6 font-bold">
+                {{ (+mainUI.hbE).toFixed(1) }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-1 font-medium">
+                @if (jsonData) {{{jsonData?.hbE}}} @else {}
+              </td>
+            </tr>
+            } @if (mainUI.hbD) {
+            <tr
+              class="border-b transition duration-300 ease-in-out hover:bg-lime-100 dark:hover:bg-lime-600"
+            >
+              <td class="whitespace-nowrap px-6 font-bold">Hb D</td>
+              <td class="whitespace-nowrap px-6 font-bold">
+                {{ (+mainUI.hbD).toFixed(1) }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-1 font-medium">
+                @if (jsonData) {{{jsonData?.hbD}}} @else {}
+              </td>
+            </tr>
+            } @if (mainUI.hbS) {
+            <tr
+              class="border-b transition duration-300 ease-in-out hover:bg-lime-100 dark:hover:bg-lime-600"
+            >
+              <td class="whitespace-nowrap px-6 font-bold">Hb S</td>
+              <td class="whitespace-nowrap px-6 font-bold">
+                {{ (+mainUI.hbS).toFixed(1) }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-1 font-medium">
+                @if (jsonData) {{{jsonData?.hbS}}} @else {}
+              </td>
+            </tr>
+            }
+            <!-- @if (mainUI.hbC) {
+            <tr
+              class="border-b transition duration-300 ease-in-out hover:bg-lime-100 dark:hover:bg-lime-600"
+            >
+              <td class="whitespace-nowrap px-6 font-bold">Hb C</td>
+              <td class="whitespace-nowrap px-6 font-bold">
+                {{ (+mainUI.hbC).toFixed(1) }}
+              </td>
+                    <td class="whitespace-nowrap px-6 py-1 font-medium">
+                      @if (jsonData) {{{jsonData?.hbC}}} @else {}
+                    </td>
+            </tr>
+            } 
+            @if (mainUI.hbQ) {
+            <tr
+              class="border-b transition duration-300 ease-in-out hover:bg-lime-100 dark:hover:bg-lime-600"
+            >
+              <td class="whitespace-nowrap px-6 font-bold">Hb Q</td>
+              <td class="whitespace-nowrap px-6 font-bold">
+                {{ (+mainUI.hbQ).toFixed(1) }}
+              </td>
+                    <td class="whitespace-nowrap px-6 py-1 font-medium">
+                      @if (jsonData) {{{jsonData?.hbQ}}} @else {}
+                    </td>
+            </tr>
+            } -->
+          </tbody>
+          }
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="max-w-3xl mx-auto mt-1"
+  [class.margin-left-when-printing]="isPrinting"
+>
+  <!-- Comments -->
+  @if (comment?.comments) {
+  <div class="text-sm flex mt-2">
+    <p class="font-bold">Comments &nbsp;:</p>
+    &nbsp;&nbsp;
+    <p style="white-space: pre-line">{{ comment.comments }}</p>
+  </div>
+  }
+  <!-- Advice -->
+  @if (advice?.advices) {
+  <div class="text-sm mt-2 flex">
+    <p class="font-bold">Advice &nbsp;:</p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p style="white-space: pre-line">{{ advice.advices }}</p>
+  </div>
+  }
+
+  <div class="h-5"></div>
+
+  <!-- Seal & Signature -->
+  @if (seals) {
+  <div
+    class="max-w-4xl mx-auto flex justify-between"
+    [ngClass]="{
+      'mt-5': margin == '1',
+      'mt-10': margin == '2',
+      'mt-16': margin == '3',
+      'mt-24': margin == '4',
+      'mt-32': margin == '5',
+      'mt-36': margin == '6',
+      'mt-40': margin == '7',
+      'mt-44': margin == '8',
+      'mt-48': margin == '9',
+      'mt-52': margin == '10',
+      'mt-56': margin == '11',
+      'mt-60': margin == '12',
+      'mt-64': margin == '13',
+      'mt-72': margin == '14',
+      'mt-80': margin == '15',
+      'mt-96': margin == '16',
+    }"
+  >
+    <div class="w-[200px]">
+      @if (leftSeals) {
+      <h4 class="font-bold capitalize text-sm">{{ leftSeals.name }}</h4>
+      <p style="white-space: pre-line" class="text-xs font-medium">
+        {{ leftSeals.degree }}
+      </p>
+      }
+    </div>
+    <div class="w-[200px]">
+      @if (middleSeals) {
+      <h4 class="font-bold capitalize text-sm">{{ middleSeals.name }}</h4>
+      <p style="white-space: pre-line" class="text-xs font-medium">
+        {{ middleSeals.degree }}
+      </p>
+      }
+    </div>
+    @if (companyID == 6) {
+    <div class="w-[270px]">
+      @if (rightSeals) {
+      <h4 class="font-bold capitalize text-sm">{{ rightSeals.name }}</h4>
+      <p style="white-space: pre-line" class="text-xs font-medium">
+        {{ rightSeals.degree }}
+      </p>
+      }
+    </div>
+    } @else {
+    <div class="w-[200px]">
+      @if (rightSeals) {
+      <h4 class="font-bold capitalize text-sm">{{ rightSeals.name }}</h4>
+      <p style="white-space: pre-line" class="text-xs font-medium">
+        {{ rightSeals.degree }}
+      </p>
+      }
+    </div>
+    }
+  </div>
+  }
+</div>

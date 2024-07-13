@@ -1,0 +1,180 @@
+<section class="max-w-4xl mx-auto">
+  <div
+    class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-lime-600"
+  >
+    <div
+      class="flex flex-shrink-0 items-center justify-center rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50"
+    >
+      <h5
+        class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+        id="exampleModalLabel"
+      >
+        All Company
+      </h5>
+    </div>
+    <div class="relative flex-auto p-4" data-te-modal-body-ref>
+      <div class="w-full mx-auto">
+        <!-- Add Company Form -->
+        <form #form="ngForm" (ngSubmit)="onCompanyFormSubmit()">
+          <p class="mb-4">Please Add a Company</p>
+          <!--Company ID input-->
+          <div class="relative mb-4" data-te-input-wrapper-init>
+            <label
+              for="CompanyID"
+              class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-50"
+              >Company ID
+            </label>
+            <input
+              autocomplete="off"
+              type="text"
+              name="companyID"
+              class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+              id="CompanyID"
+              placeholder="Company ID"
+              [(ngModel)]="modelCompany.companyID"
+            />
+          </div>
+          <!--Company Name input-->
+          <div class="relative mb-4" data-te-input-wrapper-init>
+            <label
+              for="CompanyName"
+              class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-50"
+              >Company Name
+            </label>
+            <input
+              autocomplete="off"
+              type="text"
+              name="name"
+              class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+              id="CompanyName"
+              placeholder="Company Name"
+              [(ngModel)]="modelCompany.name"
+            />
+          </div>
+          <!--Company Password input-->
+          <div class="relative mb-4" data-te-input-wrapper-init>
+            <label
+              for="CompanyPassword"
+              class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-50"
+              >Company Password
+            </label>
+            <input
+              autocomplete="off"
+              type="text"
+              name="password"
+              class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+              id="CompanyPassword"
+              placeholder="Company Password"
+              [(ngModel)]="modelCompany.password"
+            />
+          </div>
+
+          <div class="flex gap-2">
+            <!--Submit button-->
+            <button
+              class="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+              type="submit"
+              data-te-ripple-init
+              data-te-ripple-color="light"
+              style="
+                background: linear-gradient(
+                  to right,
+                  #82f3e7,
+                  #6ff1aa,
+                  #4ef356,
+                  #4cd389
+                );
+              "
+            >
+              @if (editCompanyId) {Update Company} @else {Add Company}
+            </button>
+            <!--Reset button-->
+            <button
+              (click)="resetCompanyForm()"
+              class="mb-3 inline-block w-1/5 rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+              type="button"
+              data-te-ripple-init
+              data-te-ripple-color="light"
+              style="
+                background: linear-gradient(
+                  to right,
+                  #82f3e7,
+                  #6ff1aa,
+                  #4ef356,
+                  #4cd389
+                );
+              "
+            >
+              Reset
+            </button>
+          </div>
+        </form>
+
+        <!-- Company's List -->
+        @if(companies$){
+        <div class="flex flex-col">
+          <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+              <h3 class="text-center font-bold border-b-2 border-gray-500">
+                Company's List
+              </h3>
+              <div class="overflow-hidden">
+                <table class="min-w-full text-left text-sm font-light">
+                  <thead
+                    class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-lime-600"
+                  >
+                    <tr>
+                      <th scope="col" class="px-6 py-1">ID</th>
+                      <th scope="col" class="px-6 py-1">Company Name</th>
+                      <th scope="col" class="px-6 py-1">Password</th>
+                      <th scope="col" class="px-6 py-1">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for(data of companies; track data.id){
+                    <tr
+                      class="border-b bg-lime-100 dark:border-neutral-500 dark:bg-lime-700"
+                    >
+                      <td class="whitespace-nowrap px-6 py-1">
+                        {{
+                          data?.companyID.slice(1, data?.companyID.length + 1)
+                        }}
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1">
+                        {{ data?.name }}
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1">
+                        {{ data?.password }}
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1">
+                        <button
+                          (click)="onEditCompany(data.id)"
+                          type="button"
+                          class="inline-block rounded bg-warning px-3 pb-1 mr-2 pt-1 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-warning-600 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-warning-600 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(228,161,27,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)]"
+                        >
+                          Edit
+                        </button>
+                        <!-- <button
+                        (click)="onDeleteCompany(data.id)"
+                        type="button"
+                        class="inline-block rounded bg-danger px-3 pb-1 pt-1 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(220,76,100,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)]"
+                      >
+                        Delete
+                      </button> -->
+                      </td>
+                    </tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    <div
+      class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50"
+    ></div>
+  </div>
+</section>

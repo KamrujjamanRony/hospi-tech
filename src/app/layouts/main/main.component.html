@@ -1,0 +1,98 @@
+@if (!isAuthorized) {
+
+<!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com -->
+<section
+  class="gradient-form h-full bg-lime-200 dark:bg-lime-700 flex justify-center items-center"
+>
+  <div class="block rounded-lg bg-white shadow-lg dark:bg-lime-800 max-w-2xl">
+    <div class="md:mx-6 md:p-12">
+      <!--Logo-->
+      <div class="text-center">
+        <img class="mx-auto w-48" src="../../../assets/d10.png" alt="logo" />
+        <h4 class="mb-2 mt-1 pb-1 text-xl font-semibold">
+          We are
+          <span class="brand">hospitech Intl.</span>
+          Team
+        </h4>
+      </div>
+
+      <form (submit)="onSubmitAuth()">
+        <p class="mb-4">Please login to access website</p>
+        <!-- Company ID -->
+        <div class="relative mb-3">
+          <label
+            for="companyID"
+            class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-50"
+            >Company ID
+          </label>
+          <input
+            autocomplete="off"
+            type="text"
+            class="block min-h-[auto] w-full rounded border-2 border-primary bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+            id="companyID"
+            name="companyID"
+            placeholder="Company ID"
+            tabindex="0"
+            minlength="2"
+            [(ngModel)]="code"
+          />
+          @if (errCode) {
+          <label class="label">
+            <span class="label-text-alt text-red-500 text-xs">{{
+              errCode
+            }}</span>
+          </label>
+          }
+        </div>
+        <!-- Password -->
+        <div class="relative mb-3">
+          <label
+            for="password"
+            class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-50"
+            >Password
+          </label>
+          <input
+            autocomplete="off"
+            type="text"
+            class="block min-h-[auto] w-full rounded border-2 border-primary bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+            id="password"
+            name="password"
+            placeholder="Password"
+            tabindex="0"
+            minlength="2"
+            [(ngModel)]="password"
+          />
+          @if (errPass) {
+          <label class="label">
+            <span class="label-text-alt text-red-500 text-xs">{{
+              errPass
+            }}</span>
+          </label>
+          }
+        </div>
+
+        <!--Submit button-->
+        <div class="mb-5 pb-1 pt-1 text-center">
+          <button
+            class="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+            type="submit"
+            data-te-ripple-init
+            data-te-ripple-color="light"
+            style="
+              background: linear-gradient(
+                to right,
+                #ee7724,
+                #d8363a,
+                #dd3675,
+                #b44593
+              );
+            "
+          >
+            Log in
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+} @else {<router-outlet />}

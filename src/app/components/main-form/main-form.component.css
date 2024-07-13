@@ -1,0 +1,24 @@
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 1px solid #fff;
+    padding: 5px;
+    z-index: 40;
+  }
+  
+  .search-results ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .search-results li {
+    padding: 5px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+  }
+  .selected {
+    background-color: rgb(59 113 202) !important;
+    color: #fff !important;
+  }

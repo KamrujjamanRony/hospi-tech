@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.brand {
+  font-weight: 900;
+background: #ee7724;
+background: -webkit-linear-gradient(
+  to right,
+  #82F3E7 0%,
+  #6FF1AA 33%,
+  #4EF356 66%,
+  #4CD389 100%
+);
+background: -moz-linear-gradient(
+  to right,
+  #82F3E7 0%,
+  #6FF1AA 33%,
+  #4EF356 66%,
+  #4CD389 100%
+);
+background: linear-gradient(
+  to right,
+  #82F3E7 0%,
+  #6FF1AA 33%,
+  #4EF356 66%,
+  #4CD389 100%
+);
+background-clip: text;
+-webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,1916 @@
+<section>
+  <!-- Patient form -->
+  <form
+    (ngSubmit)="onFormSubmit()"
+    #myForm="ngForm"
+    (keydown.enter)="preventEnterSubmit($event)"
+    data-te-validation-init
+  >
+    <!-- Navbar Start -->
+    <div class="bg-lime-500">
+      <div class="navbar max-w-5xl mx-auto" [class.hide-when-printing]="true">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div
+              tabindex="0"
+              role="button"
+              class="btn btn-ghost text-white lg:hidden"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <!-- Button trigger modal for Ref. Doctor-->
+                <button
+                  type="button"
+                  class="inline-block rounded bg-sky-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-sky-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-sky-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-sky-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] my-1 text-center"
+                  data-te-toggle="modal"
+                  data-te-target="#refDoctor"
+                  data-te-ripple-init
+                  data-te-ripple-color="light"
+                >
+                  Set Ref. Doctor
+                </button>
+              </li>
+              <li>
+                <!-- Button trigger modal for Seal -->
+                <button
+                  type="button"
+                  class="inline-block rounded bg-sky-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-sky-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-sky-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-sky-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] my-1 text-center"
+                  data-te-toggle="modal"
+                  data-te-target="#exampleModalScrollable"
+                  data-te-ripple-init
+                  data-te-ripple-color="light"
+                >
+                  Set Seal
+                </button>
+              </li>
+              <li>
+                <!-- Button trigger modal for Comments-->
+                <button
+                  type="button"
+                  class="inline-block rounded bg-sky-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-sky-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-sky-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-sky-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] my-1 text-center"
+                  data-te-toggle="modal"
+                  data-te-target="#setComment"
+                  data-te-ripple-init
+                  data-te-ripple-color="light"
+                >
+                  Set Comments
+                </button>
+              </li>
+              <li>
+                <!-- Button trigger modal for Advice -->
+                <button
+                  type="button"
+                  class="inline-block rounded bg-sky-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-sky-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-sky-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-sky-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] my-1 text-center"
+                  data-te-toggle="modal"
+                  data-te-target="#setAdvice"
+                  data-te-ripple-init
+                  data-te-ripple-color="light"
+                >
+                  Set Advice
+                </button>
+              </li>
+            </ul>
+          </div>
+          <a
+            routerLink=""
+            class="text-white font-bold cursor-pointer text-xl"
+            >{{ Company?.name }}</a
+          >
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li>
+              <!-- Button trigger modal for Ref. Doctor-->
+              <button
+                type="button"
+                class="inline-block rounded bg-sky-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-sky-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-sky-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-sky-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] mx-1"
+                data-te-toggle="modal"
+                data-te-target="#refDoctor"
+                data-te-ripple-init
+                data-te-ripple-color="light"
+              >
+                Set Ref. Doctor
+              </button>
+            </li>
+            <li>
+              <!-- Button trigger modal for Seal -->
+              <button
+                type="button"
+                class="inline-block rounded bg-sky-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-sky-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-sky-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-sky-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] mx-1"
+                data-te-toggle="modal"
+                data-te-target="#exampleModalScrollable"
+                data-te-ripple-init
+                data-te-ripple-color="light"
+              >
+                Set Seal
+              </button>
+            </li>
+            <li>
+              <!-- Button trigger modal for Comments-->
+              <button
+                type="button"
+                class="inline-block rounded bg-sky-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-sky-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-sky-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-sky-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] mx-1"
+                data-te-toggle="modal"
+                data-te-target="#setComment"
+                data-te-ripple-init
+                data-te-ripple-color="light"
+              >
+                Set Comments
+              </button>
+            </li>
+            <li>
+              <!-- Button trigger modal for Advice -->
+              <button
+                type="button"
+                class="inline-block rounded bg-sky-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-sky-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-sky-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-sky-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] mx-1"
+                data-te-toggle="modal"
+                data-te-target="#setAdvice"
+                data-te-ripple-init
+                data-te-ripple-color="light"
+              >
+                Set Advice
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <!-- Form submit button -->
+          <button
+            data-te-submit-btn-ref
+            Validate
+            [disabled]="
+              +modelMainUI.hbA +
+                +modelMainUI.hbF +
+                +modelMainUI.hbD +
+                +modelMainUI.hbE +
+                +modelMainUI.hbA2 +
+                +modelMainUI.hbJ +
+                +modelMainUI.hbL >
+              100
+            "
+            data-te-ripple-init
+            class="inline-block rounded bg-fuchsia-500 md:px-6 px-2 md:py-2 py-1 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#14a44d] transition duration-150 ease-in-out hover:bg-fuchsia-500-600 hover:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] focus:bg-fuchsia-500-600 focus:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] focus:outline-none focus:ring-0 active:bg-fuchsia-500-700 active:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(20,164,77,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)] mx-1 md:mx-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                d="M5.055 7.06c-1.25-.714-2.805.189-2.805 1.628v8.123c0 1.44 1.555 2.342 2.805 1.628L12 14.471v2.34c0 1.44 1.555 2.342 2.805 1.628l7.108-4.061c1.26-.72 1.26-2.536 0-3.256L14.805 7.06C13.555 6.346 12 7.25 12 8.688v2.34L5.055 7.06z"
+              />
+            </svg>
+          </button>
+
+          <!-- Reset Form Button -->
+          <button
+            type="button"
+            (click)="resetMainForm()"
+            class="inline-block rounded bg-sky-50 md:px-6 px-2 md:py-2 py-1 text-xs font-medium uppercase leading-normal text-neutral-800 shadow-[0_4px_9px_-4px_#cbcbcb] transition duration-150 ease-in-out hover:bg-sky-100 hover:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] focus:bg-sky-100 focus:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] focus:outline-none focus:ring-0 active:bg-sky-200 active:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(251,251,251,0.3)] dark:hover:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)] dark:focus:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)] dark:active:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.1),0_4px_18px_0_rgba(251,251,251,0.05)]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32l8.4-8.4z"
+              />
+              <path
+                d="M5.25 5.25a3 3 0 00-3 3v10.5a3 3 0 003 3h10.5a3 3 0 003-3V13.5a.75.75 0 00-1.5 0v5.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5V8.25a1.5 1.5 0 011.5-1.5h5.25a.75.75 0 000-1.5H5.25z"
+              />
+            </svg>
+          </button>
+          <!-- Log out Button -->
+          <button
+            type="button"
+            (click)="logOut()"
+            class="inline-block rounded bg-danger md:px-6 px-2 md:py-2 py-1 text-xs font-medium leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(220,76,100,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] mx-1 md:mx-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M15.75 2.25H21a.75.75 0 01.75.75v5.25a.75.75 0 01-1.5 0V4.81L8.03 17.03a.75.75 0 01-1.06-1.06L19.19 3.75h-3.44a.75.75 0 010-1.5zm-10.5 4.5a1.5 1.5 0 00-1.5 1.5v10.5a1.5 1.5 0 001.5 1.5h10.5a1.5 1.5 0 001.5-1.5V10.5a.75.75 0 011.5 0v8.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V8.25a3 3 0 013-3h8.25a.75.75 0 010 1.5H5.25z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Navbar End -->
+    @if (originalMainUI.length == 0) {
+    <p class="text-rose-600 text-lg text-center">Please Wait for Loading...</p>
+    } @if (loading) {
+    <span class="loading loading-infinity loading-lg"></span>
+    }
+    <div class="grid grid-cols-4 gap-2 max-w-5xl mx-auto mt-5 px-2 md:px-5">
+      <div class="col-span-3">
+        <!-- Show toast -->
+        @if (isFormValid) {
+        <div
+          class="pointer-events-auto mx-auto mb-4 hidden w-96 max-w-full rounded-lg bg-danger-100 bg-clip-padding text-sm text-danger-700 shadow-lg shadow-black/5 data-[te-toast-show]:block data-[te-toast-hide]:hidden"
+          id="static-example"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+          data-te-autohide="false"
+          data-te-toast-init
+          data-te-toast-show
+        >
+          <div
+            class="flex items-center justify-between rounded-t-lg border-b-2 border-danger-200 bg-danger-100 bg-clip-padding px-4 pb-2 pt-2.5 text-danger-700"
+          >
+            <p class="flex items-center font-bold text-danger-700">
+              <span class="mr-2 h-4 w-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              Form Invalid!
+            </p>
+            <div class="flex items-center">
+              <button
+                type="button"
+                (click)="toastClose()"
+                class="ml-2 box-content rounded-none border-none opacity-80 hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                data-te-toast-dismiss
+                aria-label="Close"
+              >
+                <span
+                  class="w-[1em] focus:opacity-100 disabled:pointer-events-none disabled:select-none disabled:opacity-25 [&.disabled]:pointer-events-none [&.disabled]:select-none [&.disabled]:opacity-25"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="h-6 w-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+          <div
+            class="break-words rounded-b-lg bg-danger-100 px-4 py-4 text-danger-700"
+          >
+            Patient ID, Patient Name & Patient Age is Required.
+          </div>
+        </div>
+        }
+
+        <!-- Input Row 01 -->
+        <div
+          class="w-full flex md:flex-row flex-col gap-2 md:gap-5 mb-2 md:mb-0"
+        >
+          <div
+            class="w-full relative mb-1 md:mb-3"
+            data-te-format="yyyy-mm-dd"
+            data-te-datepicker-init
+            data-te-input-wrapper-init
+          >
+            <label
+              for="date"
+              class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+              >Delivery Date
+            </label>
+            <input
+              autocomplete="off"
+              type="text"
+              class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+              placeholder="Select a date"
+              id="date"
+              name="date"
+              [(ngModel)]="modelMainUI.date"
+              (focus)="onOtherFocus()"
+              (input)="filterByDate()"
+              (change)="filterByDate()"
+              (keydown)="handleKeydown($event)"
+            />
+          </div>
+          <div
+            class="w-full relative mb-1 md:mb-3"
+            id="datepicker-disable-future"
+            data-te-format="yyyy-mm-dd"
+            data-te-datepicker-init
+            data-te-input-wrapper-init
+          >
+            <label
+              for="rDate"
+              class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+              >Received Date
+            </label>
+            <input
+              autocomplete="off"
+              type="text"
+              class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+              placeholder="Select a date"
+              id="rDate"
+              name="rDate"
+              [(ngModel)]="modelMainUI.rDate"
+              (keydown)="handleKeydown($event)"
+            />
+          </div>
+          <div class="w-full">
+            <div
+              class="relative mb-1 md:mb-3 w-full"
+              data-te-input-wrapper-init
+              data-te-validate="input"
+            >
+              <label
+                for="sampleID"
+                class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+                >Customer ID.
+              </label>
+              <input
+                autocomplete="off"
+                type="text"
+                class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+                id="sampleID"
+                name="sampleID"
+                placeholder="Customer ID."
+                required="true"
+                [(ngModel)]="modelMainUI.sampleID"
+                (keydown)="handleKeydown($event)"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Input Row 02 -->
+        <div
+          class="w-full flex md:flex-row flex-col gap-2 md:gap-5 mb-2 md:mb-0"
+        >
+          <div class="w-full">
+            <div
+              class="relative mb-1 md:mb-3 w-full"
+              data-te-input-wrapper-init
+              data-te-validate="input"
+              id="patientData"
+              data-te-validation-ruleset="isRequired"
+            >
+              <label
+                for="pid"
+                class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+                >Patient ID
+              </label>
+              <input
+                autocomplete="off"
+                type="text"
+                class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+                id="pid"
+                name="pid"
+                placeholder="Patient ID"
+                required="true"
+                [(ngModel)]="modelMainUI.pid"
+                (input)="onPIDSearch(modelMainUI.pid)"
+                #pidInput="ngModel"
+                tabindex="0"
+                (keydown)="handleKey($event)"
+                (keydown)="handleKeydown($event)"
+                (focus)="onInputFocus()"
+                minlength="2"
+              />
+              <!-- Display the matching patient names -->
+              @if (modelMainUI.pid.length > 0 && searchMainUI.length > 0 &&
+              isInputFocused) {
+              <div
+                #searchResults
+                class="search-results max-h-[60vh] w-96 overflow-y-auto rounded-md bg-gradient-to-l from-violet-300 to-fuchsia-300"
+              >
+                <ul>
+                  @for (item of searchMainUI; track item?.id) {
+                  <li
+                    [ngClass]="{
+                      'hover:bg-sky-500 hover:text-white flex search-item': true,
+                      selected: item?.pid === qq
+                    }"
+                    (click)="onMainUIClick(item.id)"
+                  >
+                    <p class="px-3 hidden">{{ item?.id }}</p>
+                    <p class="px-3">{{ item?.pid }} &nbsp; &nbsp; &rarr;</p>
+                    <p class="px-3">{{ item?.name }}</p>
+                  </li>
+                  }
+                </ul>
+              </div>
+              }
+            </div>
+          </div>
+
+          <div class="w-full">
+            <div
+              class="relative mb-1 md:mb-3 w-full"
+              data-te-input-wrapper-init
+              data-te-validate="input"
+            >
+              <label
+                for="cabin"
+                class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+                >Cabin No.
+              </label>
+              <input
+                autocomplete="off"
+                type="text"
+                class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+                id="cabin"
+                name="cabin"
+                placeholder="Cabin No."
+                required="true"
+                [(ngModel)]="modelMainUI.cabin"
+                (keydown)="handleKeydown($event)"
+              />
+            </div>
+          </div>
+
+          <div class="w-full">
+            <div
+              class="relative mb-1 md:mb-3 w-full"
+              data-te-input-wrapper-init
+              data-te-validate="input"
+            >
+              <label
+                for="bed"
+                class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+                >Bed No.
+              </label>
+              <input
+                autocomplete="off"
+                type="text"
+                class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+                id="bed"
+                name="bed"
+                placeholder="Bed No."
+                [(ngModel)]="modelMainUI.bed"
+                (keydown)="handleKeydown($event)"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Input Row 03 -->
+        <div
+          class="w-full flex md:flex-row flex-col gap-2 md:gap-5 mb-2 md:mb-0"
+        >
+          <div class="w-full md:w-[30%]">
+            <div
+              class="relative mb-1 md:mb-3 w-full"
+              data-te-input-wrapper-init
+            >
+              <label
+                for="age"
+                class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+                >Patient Age
+              </label>
+              <input
+                autocomplete="off"
+                type="text"
+                class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+                id="age"
+                name="age"
+                [(ngModel)]="modelMainUI.age"
+                (focus)="onOtherFocus()"
+                (keydown)="handleKeydown($event)"
+                placeholder="Patient Age"
+              />
+            </div>
+          </div>
+          <div class="relative mb-1 md:mb-3 w-full" data-te-input-wrapper-init>
+            <label
+              for="name"
+              class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+              >Patient Name
+            </label>
+            <input
+              autocomplete="off"
+              type="text"
+              class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+              id="name"
+              name="name"
+              [(ngModel)]="modelMainUI.name"
+              (focus)="onOtherFocus()"
+              (keydown)="handleKeydown($event)"
+              placeholder="Patient Name"
+            />
+          </div>
+        </div>
+
+        <!-- Input Row 04 -->
+        <div
+          class="w-full flex md:flex-row flex-col gap-2 md:gap-5 mb-2 md:mb-0"
+        >
+          <div class="w-full md:w-[30%]">
+            <div class="relative mb-1 md:mb-3 w-full">
+              <select
+                name="sex"
+                id="sex"
+                [(ngModel)]="modelMainUI.sex"
+                (focus)="onOtherFocus()"
+                (keydown)="handleKeydown($event)"
+                data-te-select-init
+              >
+                <option
+                  value="N/A"
+                  [attr.selected]="modelMainUI.sex === 'N/A' ? true : null"
+                >
+                  Select Sex
+                </option>
+                <option
+                  value="Male"
+                  [attr.selected]="modelMainUI.sex === 'Male' ? true : null"
+                >
+                  Male
+                </option>
+                <option
+                  value="Female"
+                  [attr.selected]="modelMainUI.sex === 'Female' ? true : null"
+                >
+                  Female
+                </option>
+                <option
+                  value="Others"
+                  [attr.selected]="modelMainUI.sex === 'Others' ? true : null"
+                >
+                  Others
+                </option>
+              </select>
+              <label data-te-select-label-ref for="sex" class="text-primary"
+                >Sex</label
+              >
+            </div>
+          </div>
+          <div class="relative mb-1 md:mb-3 w-full">
+            <select
+              id="refCode"
+              name="refCode"
+              [(ngModel)]="modelMainUI.refCode"
+              (focus)="onOtherFocus()"
+              (keydown)="handleKeydown($event)"
+              data-te-select-init
+              data-te-select-filter="true"
+            >
+              <option value="0">Select a Doctor</option>
+              @for (item of doctors; track item?.id) {
+              <option
+                value="{{ item.code }}"
+                [attr.selected]="modelMainUI.refCode == item.code ? true : null"
+              >
+                {{ item.code }}---{{ item.name }}
+              </option>
+              }
+            </select>
+            <label for="refCode" data-te-select-label-ref class="text-primary"
+              >Refer Doctor</label
+            >
+          </div>
+        </div>
+
+        <!-- Result Table -->
+        <div class="flex flex-col">
+          <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="inline-block min-w-full py-1 sm:px-6 lg:px-8">
+              <div class="overflow-hidden">
+                <table class="min-w-full text-center text-sm font-light">
+                  <thead
+                    class="border-b font-medium bg-slate-300 dark:border-neutral-500"
+                  >
+                    <tr>
+                      <th scope="col" class="px-6 py-1">Name</th>
+                      <th scope="col" class="px-6 py-1">%</th>
+                      <th scope="col" class="px-6 py-1">Ref. Value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb Barts
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbBarts"
+                          name="hbBarts"
+                          [(ngModel)]="modelMainUI.hbBarts"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbBarts}}} @else {}
+                      </td>
+                    </tr>
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb F
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbF"
+                          name="hbF"
+                          [(ngModel)]="modelMainUI.hbF"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbF}}} @else {<2}
+                      </td>
+                    </tr>
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb J
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbJ"
+                          name="hbJ"
+                          [(ngModel)]="modelMainUI.hbJ"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbJ}}} @else {}
+                      </td>
+                    </tr>
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb A
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbA"
+                          name="hbA"
+                          [(ngModel)]="modelMainUI.hbA"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbA}}} @else {96.1-98.5}
+                      </td>
+                    </tr>
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb Lepore
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbL"
+                          name="hbL"
+                          [(ngModel)]="modelMainUI.hbL"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbL}}} @else {}
+                      </td>
+                    </tr>
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb A<sub>2</sub>
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbA2"
+                          name="hbA2"
+                          [(ngModel)]="modelMainUI.hbA2"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbA2}}} @else {2.2-4.0}
+                      </td>
+                    </tr>
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb E
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbE"
+                          name="hbE"
+                          [(ngModel)]="modelMainUI.hbE"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbE}}} @else {}
+                      </td>
+                    </tr>
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb D
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbD"
+                          name="hbD"
+                          [(ngModel)]="modelMainUI.hbD"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbD}}} @else {}
+                      </td>
+                    </tr>
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb S
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbS"
+                          name="hbS"
+                          [(ngModel)]="modelMainUI.hbS"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbS}}} @else {}
+                      </td>
+                    </tr>
+                    <tr
+                      class="border-b border-primary-700 text-neutral-800"
+                      hidden
+                    >
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb Q
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbQ"
+                          name="hbQ"
+                          [(ngModel)]="modelMainUI.hbQ"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbQ}}} @else {}
+                      </td>
+                    </tr>
+                    <tr
+                      class="border-b border-primary-700 text-neutral-800 hidden"
+                    >
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb C
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbC"
+                          name="hbC"
+                          [(ngModel)]="modelMainUI.hbC"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbC}}} @else {}
+                      </td>
+                    </tr>
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">Hb</td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hb"
+                          name="hb"
+                          [(ngModel)]="modelMainUI.hb"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hb}}} @else {}
+                      </td>
+                    </tr>
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold"></td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        Total =
+                        {{
+                          (
+                            +modelMainUI.hbBarts +
+                            +modelMainUI.hbF +
+                            +modelMainUI.hbJ +
+                            +modelMainUI.hbA +
+                            +modelMainUI.hbL +
+                            +modelMainUI.hbA2 +
+                            +modelMainUI.hbE +
+                            +modelMainUI.hbD +
+                            +modelMainUI.hbS
+                          ).toFixed(1)
+                        }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Show toast -->
+        @if ((+modelMainUI.hbA) + (+modelMainUI.hbF) + (+modelMainUI.hbD) +
+        (+modelMainUI.hbE) + (+modelMainUI.hbA2) + (+modelMainUI.hbJ) +
+        (+modelMainUI.hbL) + (+modelMainUI.hbQ) + (+modelMainUI.hbS) +
+        (+modelMainUI.hbBarts) > 100.05) {
+        <div
+          class="pointer-events-auto mx-auto mb-4 hidden w-96 max-w-full rounded-lg bg-warning-100 bg-clip-padding text-sm text-warning-700 shadow-lg shadow-black/5 data-[te-toast-show]:block data-[te-toast-hide]:hidden"
+          id="static-example"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+          data-te-autohide="false"
+          data-te-toast-init
+          data-te-toast-show
+        >
+          <div
+            class="flex items-center justify-between rounded-t-lg border-b-2 border-warning-200 bg-warning-100 bg-clip-padding px-4 pb-2 pt-2.5 text-warning-700"
+          >
+            <p class="flex items-center font-bold text-warning-700">
+              <span class="mr-2 h-4 w-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              Result Not Valid! Maximum Result will be 100.
+            </p>
+          </div>
+        </div>
+        }
+
+        <!-- Input Row 04 -->
+        <div
+          class="w-full flex md:flex-row flex-col gap-2 md:gap-5 mb-2 md:mb-0 mt-2 md:mt-0"
+        >
+          <!-- comment -->
+          <div class="w-full md:w-1/2">
+            <div class="mb:mb-3 mb-1">
+              <select
+                id="comment"
+                name="comment"
+                [(ngModel)]="modelMainUI.comCode"
+                (focus)="onOtherFocus()"
+                (keydown)="handleKeydown($event)"
+                data-te-select-init
+                data-te-select-filter="true"
+              >
+                <option value="0">Select Comment</option>
+                @for (item of comments; track item?.id) {
+                <option
+                  value="{{ item.code }}"
+                  [attr.selected]="
+                    modelMainUI.comCode == item.code ? true : null
+                  "
+                >
+                  {{ item.code }}---{{ item.comments }}
+                </option>
+                }
+              </select>
+              <label for="comment" data-te-select-label-ref class="text-primary"
+                >Comment</label
+              >
+            </div>
+          </div>
+
+          <!-- advice -->
+          <div class="w-full md:w-1/2">
+            <div class="mb:mb-3 mb-1">
+              <select
+                id="advice"
+                name="advice"
+                [(ngModel)]="modelMainUI.advCode"
+                (focus)="onOtherFocus()"
+                (keydown)="handleKeydown($event)"
+                data-te-select-init
+                data-te-select-filter="true"
+              >
+                <option value="0">Select Advice</option>
+                @for (item of advices; track item?.id) {
+                <option
+                  value="{{ item.code }}"
+                  [attr.selected]="
+                    modelMainUI.advCode == item.code ? true : null
+                  "
+                >
+                  {{ item.code }}---{{ item.advices }}
+                </option>
+                }
+              </select>
+              <label for="advice" data-te-select-label-ref class="text-primary"
+                >Advice</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="pb-1 pt-1 text-center">
+          <input
+            class="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+            type="submit"
+            data-te-submit-btn-ref
+            Validate
+            [disabled]="
+              +modelMainUI.hbA +
+                +modelMainUI.hbF +
+                +modelMainUI.hbD +
+                +modelMainUI.hbE +
+                +modelMainUI.hbA2 +
+                +modelMainUI.hbJ +
+                +modelMainUI.hbQ +
+                +modelMainUI.hbS +
+                +modelMainUI.hbC +
+                +modelMainUI.hbBarts >
+              100.05
+            "
+            data-te-ripple-init
+            data-te-ripple-color="light"
+            style="
+              background: linear-gradient(
+                to right,
+                #82f3e7,
+                #6ff1aa,
+                #4ef356,
+                #4cd389
+              );
+            "
+            value="Save Report"
+          />
+        </div>
+      </div>
+      <div class="col-span-1 bg-slate-200 h-fit p-1 rounded">
+        <h3 class="font-semibold">
+          Todays Total Test: {{ asideMainUI.length }}
+        </h3>
+        <ul>
+          @for (item of asideMainUI; track item?.id) {
+          <li
+            [ngClass]="{
+              'hover:bg-sky-500 bg-white hover:text-white flex search-item border border-gray-300 rounded my-1 px-3 py-1 cursor-pointer': true,
+              selected: item?.pid === qq
+            }"
+            (click)="onMainUIClick(item.id)"
+          >
+            <p class="hidden">{{ item?.id }}</p>
+            <p>{{ item?.pid }}</p>
+            <p class="hidden md:block">&rarr;</p>
+            <p class="hidden md:block">{{ item?.name }}</p>
+          </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </form>
+
+  <!-- Modal for reference doctor -->
+  <div
+    data-te-modal-init
+    class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+    id="refDoctor"
+    tabindex="-1"
+    aria-labelledby="exampleModalScrollableLabel"
+    aria-hidden="true"
+  >
+    <div
+      data-te-modal-dialog-ref
+      class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:my-7 min-[700px]:max-w-[1200px]"
+    >
+      <div
+        class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-sky-600"
+      >
+        <div
+          class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50"
+        >
+          <h5
+            class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+            id="exampleModalLabel"
+          >
+            Reference Doctor
+          </h5>
+          <button
+            type="button"
+            class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+            data-te-modal-dismiss
+            aria-label="Close"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="relative flex-auto p-4" data-te-modal-body-ref>
+          <div class="w-full mx-auto">
+            <!-- Add Ref. Doctor Form -->
+            <form #form="ngForm" (ngSubmit)="onRefDoctorFormSubmit()">
+              <!--Doctor Code input-->
+              <div>
+                <div class="relative mb-4" data-te-input-wrapper-init>
+                  <label
+                    for="code"
+                    class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+                    >Doctor Code
+                  </label>
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    name="code"
+                    class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+                    id="code"
+                    placeholder="Doctor Code"
+                    [(ngModel)]="modelDoctor.code"
+                  />
+                </div>
+              </div>
+
+              <!--Doctor Name input-->
+              <div>
+                <div class="relative mb-4" data-te-input-wrapper-init>
+                  <label
+                    for="drName"
+                    class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+                    >Doctor Name
+                  </label>
+                  <textarea
+                    class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+                    id="drName"
+                    name="name"
+                    autocomplete="off"
+                    rows="3"
+                    placeholder="Doctor Name"
+                    [(ngModel)]="modelDoctor.name"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="flex gap-2">
+                <!--Submit button-->
+                <button
+                  class="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                  type="submit"
+                  data-te-ripple-init
+                  data-te-ripple-color="light"
+                  style="
+                    background: linear-gradient(
+                      to right,
+                      #82f3e7,
+                      #6ff1aa,
+                      #4ef356,
+                      #4cd389
+                    );
+                  "
+                >
+                  @if (editDoctorId) {Update Doctor} @else {Add Doctor}
+                </button>
+                <!--Reset button-->
+                <button
+                  (click)="resetDoctorForm()"
+                  class="mb-3 inline-block w-1/5 rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                  type="button"
+                  data-te-ripple-init
+                  data-te-ripple-color="light"
+                  style="
+                    background: linear-gradient(
+                      to right,
+                      #82f3e7,
+                      #6ff1aa,
+                      #4ef356,
+                      #4cd389
+                    );
+                  "
+                >
+                  Reset
+                </button>
+              </div>
+            </form>
+
+            <!-- Ref. Doctor List -->
+            @if(doctors$){
+            <div class="flex flex-col">
+              <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+                  <h3 class="text-center font-bold border-b-2 border-gray-500">
+                    Reference Doctor's List
+                  </h3>
+                  <div class="overflow-hidden">
+                    <table class="min-w-full text-left text-sm font-light">
+                      <thead
+                        class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-sky-600"
+                      >
+                        <tr>
+                          <th scope="col" class="px-6 py-1">Code</th>
+                          <th scope="col" class="px-6 py-1">Name</th>
+                          <th scope="col" class="px-6 py-1">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @for(doctor of doctors$ | async; track doctor.id){
+                        <tr
+                          class="border-b bg-sky-100 dark:border-neutral-500 dark:bg-sky-700"
+                        >
+                          <td class="whitespace-nowrap px-6 py-1">
+                            {{ doctor?.code }}
+                          </td>
+                          @if (doctor?.name) {
+                          <td class="whitespace-nowrap px-6 py-1">
+                            {{ doctor.name.slice(0, 30) }}
+                            @if (doctor.name.length > 30) {...}
+                          </td>
+                          }
+                          <td class="whitespace-nowrap px-6 py-1">
+                            <button
+                              (click)="onEditDoctor(doctor.id)"
+                              type="button"
+                              class="inline-block rounded bg-warning px-3 pb-1 mr-2 pt-1 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-warning-600 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-warning-600 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(228,161,27,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)]"
+                            >
+                              Edit
+                            </button>
+                            <button
+                              (click)="onDeleteDoctor(doctor.id)"
+                              type="button"
+                              class="inline-block rounded bg-danger px-3 pb-1 pt-1 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(220,76,100,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)]"
+                            >
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                        }
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+        <div
+          class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50"
+        >
+          <button
+            type="button"
+            class="inline-block rounded bg-sky-100 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-sky-accent-100 focus:bg-sky-accent-100 focus:outline-none focus:ring-0 active:bg-sky-accent-200"
+            data-te-modal-dismiss
+            data-te-ripple-init
+            data-te-ripple-color="light"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal for Comment -->
+  <div
+    data-te-modal-init
+    class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+    id="setComment"
+    tabindex="-1"
+    aria-labelledby="exampleModalScrollableLabel"
+    aria-hidden="true"
+  >
+    <div
+      data-te-modal-dialog-ref
+      class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:my-7 min-[700px]:max-w-[1200px]"
+    >
+      <div
+        class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-sky-600"
+      >
+        <div
+          class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50"
+        >
+          <h5
+            class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+            id="exampleModalLabel"
+          >
+            Set Comment
+          </h5>
+          <button
+            type="button"
+            class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+            data-te-modal-dismiss
+            aria-label="Close"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="relative flex-auto p-4" data-te-modal-body-ref>
+          <div class="w-full mx-auto">
+            <!-- Add Comment Form -->
+            <form #form="ngForm" (ngSubmit)="onCommentFormSubmit()">
+              <p class="mb-4">Please Add a Comment</p>
+              <!--Comment Code input-->
+              <div>
+                <div class="relative mb-4" data-te-input-wrapper-init>
+                  <label
+                    for="commentCode"
+                    class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+                    >Comment Code
+                  </label>
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    name="code"
+                    class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+                    id="commentCode"
+                    placeholder="Comment Code"
+                    [(ngModel)]="modelComment.code"
+                  />
+                </div>
+              </div>
+
+              <!--Comment input-->
+              <div>
+                <div class="relative mb-4" data-te-input-wrapper-init>
+                  <label
+                    for="comment"
+                    class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+                    >Comment
+                  </label>
+                  <textarea
+                    class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+                    id="comment"
+                    autocomplete="off"
+                    rows="3"
+                    name="comments"
+                    placeholder="Comment"
+                    [(ngModel)]="modelComment.comments"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="flex gap-2">
+                <!--Submit button-->
+                <button
+                  class="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                  type="submit"
+                  data-te-ripple-init
+                  data-te-ripple-color="light"
+                  style="
+                    background: linear-gradient(
+                      to right,
+                      #82f3e7,
+                      #6ff1aa,
+                      #4ef356,
+                      #4cd389
+                    );
+                  "
+                >
+                  @if (editCommentId) {Update Comment} @else {Add Comment}
+                </button>
+                <!--Reset button-->
+                <button
+                  (click)="resetCommentForm()"
+                  class="mb-3 inline-block w-1/5 rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                  type="button"
+                  data-te-ripple-init
+                  data-te-ripple-color="light"
+                  style="
+                    background: linear-gradient(
+                      to right,
+                      #82f3e7,
+                      #6ff1aa,
+                      #4ef356,
+                      #4cd389
+                    );
+                  "
+                >
+                  Reset
+                </button>
+              </div>
+            </form>
+
+            <!-- Comment's List -->
+            @if(comments$){
+            <div class="flex flex-col">
+              <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+                  <h3 class="text-center font-bold border-b-2 border-gray-500">
+                    Comment's List
+                  </h3>
+                  <div class="overflow-hidden">
+                    <table class="min-w-full text-left text-sm font-light">
+                      <thead
+                        class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-sky-600"
+                      >
+                        <tr>
+                          <th scope="col" class="px-6 py-1">Code</th>
+                          <th scope="col" class="px-6 py-1">Comment</th>
+                          <th scope="col" class="px-6 py-1">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @for(data of comments$ | async; track data.id){
+                        <tr
+                          class="border-b bg-sky-100 dark:border-neutral-500 dark:bg-sky-700"
+                        >
+                          <td class="whitespace-nowrap px-6 py-1">
+                            {{ data?.code }}
+                          </td>
+                          @if (data?.comments) {
+                          <td class="whitespace-nowrap px-6 py-1">
+                            {{ data.comments.slice(0, 30) }}
+                            @if (data.comments.length > 30) {...}
+                          </td>
+                          }
+                          <td class="whitespace-nowrap px-6 py-1">
+                            <button
+                              (click)="onEditComment(data.id)"
+                              type="button"
+                              class="inline-block rounded bg-warning px-3 pb-1 mr-2 pt-1 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-warning-600 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-warning-600 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(228,161,27,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)]"
+                            >
+                              Edit
+                            </button>
+                            <button
+                              (click)="onDeleteComment(data.id)"
+                              type="button"
+                              class="inline-block rounded bg-danger px-3 pb-1 pt-1 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(220,76,100,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)]"
+                            >
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                        }
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+        <div
+          class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50"
+        >
+          <button
+            type="button"
+            class="inline-block rounded bg-sky-100 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-sky-accent-100 focus:bg-sky-accent-100 focus:outline-none focus:ring-0 active:bg-sky-accent-200"
+            data-te-modal-dismiss
+            data-te-ripple-init
+            data-te-ripple-color="light"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Advice -->
+  <div
+    data-te-modal-init
+    class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+    id="setAdvice"
+    tabindex="-1"
+    aria-labelledby="exampleModalScrollableLabel"
+    aria-hidden="true"
+  >
+    <div
+      data-te-modal-dialog-ref
+      class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:my-7 min-[700px]:max-w-[1200px]"
+    >
+      <div
+        class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-sky-600"
+      >
+        <div
+          class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50"
+        >
+          <h5
+            class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+            id="exampleModalLabel"
+          >
+            Set Advice
+          </h5>
+          <button
+            type="button"
+            class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+            data-te-modal-dismiss
+            aria-label="Close"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="relative flex-auto p-4" data-te-modal-body-ref>
+          <div class="w-full mx-auto">
+            <!-- Advice Form -->
+            <form #form="ngForm" (ngSubmit)="onAdviceFormSubmit()">
+              <p class="mb-4">Please Add a Advice</p>
+              <!--Advice Code input-->
+              <div>
+                <div class="relative mb-4" data-te-input-wrapper-init>
+                  <label
+                    for="AdviceCode"
+                    class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+                    >Advice Code
+                  </label>
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    name="code"
+                    class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+                    id="AdviceCode"
+                    placeholder="Advice Code"
+                    [(ngModel)]="modelAdvice.code"
+                  />
+                </div>
+              </div>
+
+              <!--Doctor Name input-->
+              <div>
+                <div class="relative mb-4" data-te-input-wrapper-init>
+                  <label
+                    for="Advice"
+                    class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+                    >Advice
+                  </label>
+                  <textarea
+                    class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+                    id="Advice"
+                    name="advices"
+                    autocomplete="off"
+                    rows="3"
+                    placeholder="Advice"
+                    [(ngModel)]="modelAdvice.advices"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="flex gap-2">
+                <!--Submit button-->
+                <button
+                  class="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                  type="submit"
+                  data-te-ripple-init
+                  data-te-ripple-color="light"
+                  style="
+                    background: linear-gradient(
+                      to right,
+                      #82f3e7,
+                      #6ff1aa,
+                      #4ef356,
+                      #4cd389
+                    );
+                  "
+                >
+                  @if (editAdviceId) {Update Advice} @else {Add Advice}
+                </button>
+                <!--Reset button-->
+                <button
+                  (click)="resetAdviceForm()"
+                  class="mb-3 inline-block w-1/5 rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                  type="button"
+                  data-te-ripple-init
+                  data-te-ripple-color="light"
+                  style="
+                    background: linear-gradient(
+                      to right,
+                      #82f3e7,
+                      #6ff1aa,
+                      #4ef356,
+                      #4cd389
+                    );
+                  "
+                >
+                  Reset
+                </button>
+              </div>
+            </form>
+
+            <!-- Advice's List -->
+            @if(advices$){
+            <div class="flex flex-col">
+              <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+                  <h3 class="text-center font-bold border-b-2 border-gray-500">
+                    Advice's List
+                  </h3>
+                  <div class="overflow-hidden">
+                    <table class="min-w-full text-left text-sm font-light">
+                      <thead
+                        class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-sky-600"
+                      >
+                        <tr>
+                          <th scope="col" class="px-6 py-1">Code</th>
+                          <th scope="col" class="px-6 py-1">Advice</th>
+                          <th scope="col" class="px-6 py-1">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @for(data of advices$ | async; track data.id){
+                        <tr
+                          class="border-b bg-sky-100 dark:border-neutral-500 dark:bg-sky-700"
+                        >
+                          <td class="whitespace-nowrap px-6 py-1">
+                            {{ data?.code }}
+                          </td>
+                          @if (data?.advices) {
+                          <td class="whitespace-nowrap px-6 py-1">
+                            {{ data.advices.slice(0, 30) }}
+                            @if (data.advices.length > 30) {...}
+                          </td>
+                          }
+                          <td class="whitespace-nowrap px-6 py-1">
+                            <button
+                              (click)="onEditAdvice(data.id)"
+                              type="button"
+                              class="inline-block rounded bg-warning px-3 pb-1 mr-2 pt-1 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-warning-600 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-warning-600 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(228,161,27,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)]"
+                            >
+                              Edit
+                            </button>
+                            <button
+                              (click)="onDeleteAdvice(data.id)"
+                              type="button"
+                              class="inline-block rounded bg-danger px-3 pb-1 pt-1 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(220,76,100,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)]"
+                            >
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                        }
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+        <div
+          class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50"
+        >
+          <button
+            type="button"
+            class="inline-block rounded bg-sky-100 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-sky-accent-100 focus:bg-sky-accent-100 focus:outline-none focus:ring-0 active:bg-sky-accent-200"
+            data-te-modal-dismiss
+            data-te-ripple-init
+            data-te-ripple-color="light"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for seal -->
+  <div
+    data-te-modal-init
+    class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+    id="exampleModalScrollable"
+    tabindex="-1"
+    aria-labelledby="exampleModalScrollableLabel"
+    aria-hidden="true"
+  >
+    <div
+      data-te-modal-dialog-ref
+      class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:my-7 min-[700px]:max-w-[1200px]"
+    >
+      <div
+        class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-sky-600"
+      >
+        <div
+          class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50"
+        >
+          <h5
+            class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+            id="exampleModalLabel"
+          >
+            Set Seal
+          </h5>
+          <button
+            type="button"
+            class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+            data-te-modal-dismiss
+            aria-label="Close"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="relative flex-auto p-4" data-te-modal-body-ref>
+          <div class="w-full mx-auto">
+            <!-- Seal Form -->
+            <form #form="ngForm" (ngSubmit)="onSealFormSubmit()">
+              <!--Doctor name input-->
+              <div>
+                <div class="relative mb-4" data-te-input-wrapper-init>
+                  <label
+                    for="refDr"
+                    class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+                    >Doctor Name
+                  </label>
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    name="name"
+                    class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+                    id="refDr"
+                    placeholder="Doctor Name"
+                    [(ngModel)]="modelSeal.name"
+                  />
+                </div>
+              </div>
+
+              <!--Degree input-->
+              <div>
+                <div class="relative mb-4" data-te-input-wrapper-init>
+                  <label
+                    for="degree"
+                    class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+                    >Doctor Degree
+                  </label>
+                  <textarea
+                    class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+                    id="degree"
+                    name="degree"
+                    autocomplete="off"
+                    rows="3"
+                    placeholder="Doctor Degree"
+                    [(ngModel)]="modelSeal.degree"
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- Seal Position select -->
+              <div>
+                <div class="mb-3">
+                  <select
+                    id="position"
+                    name="position"
+                    data-te-select-init
+                    [(ngModel)]="modelSeal.position"
+                  >
+                    <option value="0">None</option>
+                    <option value="1">Left Seal</option>
+                    <option value="2">Middle Seal</option>
+                    <option value="3">Right Seal</option>
+                  </select>
+                  <label
+                    data-te-select-label-ref
+                    for="position"
+                    class="text-primary bg-white z-10 px-2"
+                    >Seal Position</label
+                  >
+                </div>
+              </div>
+
+              <div class="flex gap-2">
+                <!--Submit button-->
+                <button
+                  class="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                  type="submit"
+                  data-te-ripple-init
+                  data-te-ripple-color="light"
+                  style="
+                    background: linear-gradient(
+                      to right,
+                      #82f3e7,
+                      #6ff1aa,
+                      #4ef356,
+                      #4cd389
+                    );
+                  "
+                >
+                  @if (editSealId) {Update Seal} @else {Add Seal}
+                </button>
+                <!--Reset button-->
+                <button
+                  (click)="resetSealForm()"
+                  class="mb-3 inline-block w-1/5 rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                  type="button"
+                  data-te-ripple-init
+                  data-te-ripple-color="light"
+                  style="
+                    background: linear-gradient(
+                      to right,
+                      #82f3e7,
+                      #6ff1aa,
+                      #4ef356,
+                      #4cd389
+                    );
+                  "
+                >
+                  Reset
+                </button>
+              </div>
+            </form>
+
+            <!-- Seal List -->
+            @if(seals$){
+            <div class="flex flex-col">
+              <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+                  <h3 class="text-center font-bold border-b-2 border-gray-500">
+                    Seal List
+                  </h3>
+                  <div class="overflow-hidden">
+                    <table class="min-w-full text-left text-sm font-light">
+                      <thead
+                        class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-sky-600"
+                      >
+                        <tr>
+                          <th scope="col" class="px-6 py-1">Name</th>
+                          <th scope="col" class="px-6 py-1">Degree</th>
+                          <th scope="col" class="px-6 py-1">Position</th>
+                          <th scope="col" class="px-6 py-1">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @for(seal of seals$ | async; track seal.id){
+                        <tr
+                          class="border-b bg-sky-100 dark:border-neutral-500 dark:bg-sky-700"
+                        >
+                          <td class="whitespace-nowrap px-6 py-1">
+                            {{ seal?.name }}
+                          </td>
+                          @if (seal?.degree) {
+                          <td class="whitespace-nowrap px-6 py-1">
+                            {{ seal.degree.slice(0, 30) }}
+                            @if (seal.degree.length > 30) {...}
+                          </td>
+                          } @else { . } @if(seal?.position == "1"){
+                          <td class="whitespace-nowrap px-6 py-1 font-bold">
+                            Left
+                          </td>
+                          } @else if (seal?.position == "2") {
+                          <td class="whitespace-nowrap px-6 py-1 font-bold">
+                            Middle
+                          </td>
+                          } @else if (seal?.position == "3") {
+                          <td class="whitespace-nowrap px-6 py-1 font-bold">
+                            Right
+                          </td>
+                          } @else {
+                          <td class="whitespace-nowrap px-6 py-1">None</td>
+                          }
+                          <td class="whitespace-nowrap px-6 py-1">
+                            <button
+                              (click)="onEditSeal(seal.id)"
+                              type="button"
+                              class="inline-block rounded bg-warning px-3 pb-1 mr-2 pt-1 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-warning-600 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-warning-600 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(228,161,27,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.2),0_4px_18px_0_rgba(228,161,27,0.1)]"
+                            >
+                              Edit
+                            </button>
+                            <button
+                              (click)="onDeleteSeal(seal.id)"
+                              type="button"
+                              class="inline-block rounded bg-danger px-3 pb-1 pt-1 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(220,76,100,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.2),0_4px_18px_0_rgba(220,76,100,0.1)]"
+                            >
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                        }
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+        <div
+          class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50"
+        >
+          <button
+            type="button"
+            class="inline-block rounded bg-sky-100 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-sky-accent-100 focus:bg-sky-accent-100 focus:outline-none focus:ring-0 active:bg-sky-accent-200"
+            data-te-modal-dismiss
+            data-te-ripple-init
+            data-te-ripple-color="light"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

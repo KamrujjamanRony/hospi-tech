@@ -1,0 +1,41 @@
+.barCode{
+  font-family: 'Libre Barcode 39';
+  font-size: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-height: 18px;
+}
+
+@media print {
+    .flex-when-printing {
+      flex-direction: row !important;
+    }
+    .hide-when-printing {
+      opacity: 0 !important;
+    }
+    .left-when-printing {
+      margin: 0 auto !important;
+    }
+    .margin-left-when-printing {
+      margin-left: 3% !important;
+      max-width: 670px !important;
+      margin: 0 auto !important;
+    }
+    .black-when-printing {
+      border: 2px solid black !important;
+      max-width: 700px !important;
+      font-size: small;
+    }
+    .margin-top-when-printing {
+      margin-top: -70px !important;
+    }
+    .position-when-printing {
+      bottom: 0 !important;
+      right: -20px !important;
+    }
+    /* .small-when-printing{
+      font-size: x-small;
+      letter-spacing: 0;
+    } */
+  }

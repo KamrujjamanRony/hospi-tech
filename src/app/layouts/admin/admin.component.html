@@ -1,0 +1,42 @@
+@if (!isAuthorized) {
+<div class="hero min-h-screen bg-gradient-to-r from-sky-200 to-indigo-200">
+  <div class="hero-content">
+    <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto">
+      <h1 class="text-xl md:text-2xl lg:text-3xl text-center font-bold pt-5">
+        Admin Panel
+      </h1>
+      <form (submit)="onSubmitAuth($event)" class="card-body">
+        <label for="password">Enter Security Key:</label>
+        <input
+          type="password"
+          id="password"
+          class="input input-bordered"
+          required
+          [(ngModel)]="pass"
+          name="pass"
+        />
+        <label class="label">
+          <span class="label-text-alt text-red-500">{{ err }}</span>
+        </label>
+        <div>
+          <input
+            type="submit"
+            id="authorizeBtn"
+            value="Authorize"
+            class="btn btn-primary btn-md mt-2 w-full py-2 text-white"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+} @else {
+<div
+  class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white"
+>
+  <app-side-bar />
+  <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+}
