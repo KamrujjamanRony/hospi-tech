@@ -15,11 +15,10 @@ import { AuthService } from '../../services/auth.service';
 import { environment } from '../../../environments/environments';
 
 @Component({
-  selector: 'app-company-list',
-  standalone: true,
-  imports: [CommonModule, FormsModule, NgClass],
-  templateUrl: './company-list.component.html',
-  styleUrl: './company-list.component.css'
+    selector: 'app-company-list',
+    imports: [CommonModule, FormsModule, NgClass],
+    templateUrl: './company-list.component.html',
+    styleUrl: './company-list.component.css'
 })
 export class CompanyListComponent implements OnInit, OnDestroy {
   modelCompany: any;

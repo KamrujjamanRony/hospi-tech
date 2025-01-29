@@ -5,11 +5,10 @@ import { RouterOutlet } from '@angular/router';
 import { environment } from '../../../environments/environments';
 
 @Component({
-  selector: 'app-count',
-  standalone: true,
-  imports: [ FormsModule, CommonModule, RouterOutlet],
-  templateUrl: './count.component.html',
-  styleUrl: './count.component.css'
+    selector: 'app-count',
+    imports: [FormsModule, CommonModule, RouterOutlet],
+    templateUrl: './count.component.html',
+    styleUrl: './count.component.css'
 })
 export class CountComponent {
   isAuthorized: boolean = false;

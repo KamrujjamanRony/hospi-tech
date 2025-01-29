@@ -1,12 +1,12 @@
 <section class="max-w-4xl mx-auto">
   <div
-    class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-lime-600"
+    class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none"
   >
     <div
-      class="flex flex-shrink-0 items-center justify-center rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50"
+      class="flex flex-shrink-0 items-center justify-center rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4"
     >
       <h5
-        class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+        class="text-xl font-medium leading-normal text-neutral-800"
         id="exampleModalLabel"
       >
         All Test Count
@@ -118,9 +118,7 @@
               </h3>
               <div class="overflow-hidden">
                 <table class="min-w-full text-left text-sm font-light">
-                  <thead
-                    class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-lime-600"
-                  >
+                  <thead class="border-b bg-white font-medium">
                     <tr class="text-center">
                       <th scope="col" class="px-6 py-1">Company ID</th>
                       <th scope="col" class="px-6 py-1">Company Name</th>
@@ -129,9 +127,7 @@
                   </thead>
                   <tbody>
                     @for(data of companies; track data.id){
-                    <tr
-                      class="border-b bg-lime-100 dark:border-neutral-500 dark:bg-lime-700 text-center"
-                    >
+                    <tr class="border-b bg-lime-100 text-center">
                       <td class="whitespace-nowrap px-6 py-1">
                         {{ data?.id.slice(1, data?.id.length + 1) }}
                       </td>
@@ -154,7 +150,7 @@
       </div>
     </div>
     <div
-      class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50"
+      class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4"
     ></div>
   </div>
 </section>

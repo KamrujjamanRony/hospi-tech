@@ -6,8 +6,8 @@ import {
   OnDestroy,
   OnInit,
   Renderer2,
-  ViewChild,
   inject,
+  viewChild
 } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
@@ -31,11 +31,10 @@ import { CommentService } from '../../services/comment.service';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-main-form',
-  standalone: true,
-  imports: [CommonModule, FormsModule, NgClass, ReactiveFormsModule],
-  templateUrl: './main-form.component.html',
-  styleUrl: './main-form.component.css',
+    selector: 'app-main-form',
+    imports: [CommonModule, FormsModule, NgClass, ReactiveFormsModule],
+    templateUrl: './main-form.component.html',
+    styleUrl: './main-form.component.css'
 })
 export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
   dataService = inject(DataService);
@@ -95,7 +94,7 @@ export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
   selectedIndex: number | null = null;
   companyID: any;
   jsonData: any;
-  @ViewChild('searchResults') searchResults: ElementRef | undefined;
+  readonly searchResults = viewChild<ElementRef>('searchResults');
   constructor(
     private mainUIService: MainUIService,
     private doctorService: DoctorService,
@@ -268,9 +267,10 @@ export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
 
   // handle keyboard navigation
   handleKey(event: KeyboardEvent): void {
-    if (this.searchResults && this.searchResults.nativeElement) {
+    const searchResults = this.searchResults();
+    if (searchResults && searchResults.nativeElement) {
       const items =
-        this.searchResults.nativeElement.querySelectorAll('.search-item');
+        searchResults.nativeElement.querySelectorAll('.search-item');
 
       switch (event.key) {
         case 'ArrowUp':

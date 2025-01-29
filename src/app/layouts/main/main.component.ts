@@ -12,11 +12,10 @@ import { AuthService } from '../../services/auth.service';
 import { environment } from '../../../environments/environments';
 
 @Component({
-  selector: 'app-main',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet, FormsModule],
-  templateUrl: './main.component.html',
-  styleUrl: './main.component.css'
+    selector: 'app-main',
+    imports: [CommonModule, RouterOutlet, FormsModule],
+    templateUrl: './main.component.html',
+    styleUrl: './main.component.css'
 })
 export class MainComponent implements OnInit {
   Company$?: Observable<any[]>;

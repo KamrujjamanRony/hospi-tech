@@ -16,11 +16,10 @@ import { AuthService } from '../../services/auth.service';
 import { environment } from '../../../environments/environments';
 
 @Component({
-  selector: 'app-test-count',
-  standalone: true,
-  imports: [CommonModule, FormsModule, NgClass],
-  templateUrl: './test-count.component.html',
-  styleUrl: './test-count.component.css'
+    selector: 'app-test-count',
+    imports: [CommonModule, FormsModule, NgClass],
+    templateUrl: './test-count.component.html',
+    styleUrl: './test-count.component.css'
 })
 export class TestCountComponent implements OnInit, OnDestroy {
   modelTestCount: any;

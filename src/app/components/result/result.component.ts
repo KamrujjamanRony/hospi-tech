@@ -15,11 +15,10 @@ import { MainUIService } from '../../services/main-ui.service';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-result',
-  standalone: true,
-  imports: [CommonModule, CanvasJSAngularChartsModule, FormsModule, RouterLink],
-  templateUrl: './result.component.html',
-  styleUrl: './result.component.css',
+    selector: 'app-result',
+    imports: [CommonModule, CanvasJSAngularChartsModule, FormsModule, RouterLink],
+    templateUrl: './result.component.html',
+    styleUrl: './result.component.css'
 })
 export class ResultComponent implements OnInit, OnDestroy {
   dataService = inject(DataService);
