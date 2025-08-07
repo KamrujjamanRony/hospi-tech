@@ -357,16 +357,16 @@
           </thead>
           @if (mainUI) {
           <tbody>
-            @if (mainUI.hbBarts) {
+            @if (mainUI.hbA) {
             <tr
               class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
             >
-              <td class="whitespace-nowrap px-6 font-bold">Hb Barts</td>
+              <td class="whitespace-nowrap px-6 font-bold">Hb A</td>
               <td class="whitespace-nowrap px-6 font-bold">
-                {{ (+mainUI.hbBarts).toFixed(1) }}
+                {{ (+mainUI.hbA).toFixed(1) }}
               </td>
               <td class="whitespace-nowrap px-6 py-1 font-medium">
-                @if (jsonData) {{{jsonData?.hbBarts}}} @else {}
+                @if (jsonData) {{{jsonData?.hbA}}} @else {96.1-98.5}
               </td>
             </tr>
             } @if (mainUI.hbF) {
@@ -379,66 +379,6 @@
               </td>
               <td class="whitespace-nowrap px-6 py-1 font-medium">
                 @if (jsonData) {{{jsonData?.hbF}}} @else {<2}
-              </td>
-            </tr>
-            } @if (mainUI.hbJ) {
-            <tr
-              class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
-            >
-              <td class="whitespace-nowrap px-6 font-bold">Hb J</td>
-              <td class="whitespace-nowrap px-6 font-bold">
-                {{ (+mainUI.hbJ).toFixed(1) }}
-              </td>
-              <td class="whitespace-nowrap px-6 py-1 font-medium">
-                @if (jsonData) {{{jsonData?.hbJ}}} @else {}
-              </td>
-            </tr>
-            } @if (mainUI.hbA) {
-            <tr
-              class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
-            >
-              <td class="whitespace-nowrap px-6 font-bold">Hb A</td>
-              <td class="whitespace-nowrap px-6 font-bold">
-                {{ (+mainUI.hbA).toFixed(1) }}
-              </td>
-              <td class="whitespace-nowrap px-6 py-1 font-medium">
-                @if (jsonData) {{{jsonData?.hbA}}} @else {96.1-98.5}
-              </td>
-            </tr>
-            } @if (mainUI.hbL) {
-            <tr
-              class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
-            >
-              <td class="whitespace-nowrap px-6 font-bold">Hb Lepore</td>
-              <td class="whitespace-nowrap px-6 font-bold">
-                {{ (+mainUI.hbL).toFixed(1) }}
-              </td>
-              <td class="whitespace-nowrap px-6 py-1 font-medium">
-                @if (jsonData) {{{jsonData?.hbL}}} @else {}
-              </td>
-            </tr>
-            } @if (mainUI.hbA2) {
-            <tr
-              class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
-            >
-              <td class="whitespace-nowrap px-6 font-bold">Hb A<sub>2</sub></td>
-              <td class="whitespace-nowrap px-6 font-bold">
-                {{ (+mainUI.hbA2).toFixed(1) }}
-              </td>
-              <td class="whitespace-nowrap px-6 py-1 font-medium">
-                @if (jsonData) {{{jsonData?.hbA2}}} @else {2.2-4.0}
-              </td>
-            </tr>
-            } @if (mainUI.hbE) {
-            <tr
-              class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
-            >
-              <td class="whitespace-nowrap px-6 font-bold">Hb E</td>
-              <td class="whitespace-nowrap px-6 font-bold">
-                {{ (+mainUI.hbE).toFixed(1) }}
-              </td>
-              <td class="whitespace-nowrap px-6 py-1 font-medium">
-                @if (jsonData) {{{jsonData?.hbE}}} @else {}
               </td>
             </tr>
             } @if (mainUI.hbD) {
@@ -465,8 +405,31 @@
                 @if (jsonData) {{{jsonData?.hbS}}} @else {}
               </td>
             </tr>
-            }
-            <!-- @if (mainUI.hbC) {
+            } @if (mainUI.hbE) {
+            <tr
+              class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
+            >
+              <td class="whitespace-nowrap px-6 font-bold">Hb E</td>
+              <td class="whitespace-nowrap px-6 font-bold">
+                {{ (+mainUI.hbE).toFixed(1) }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-1 font-medium">
+                @if (jsonData) {{{jsonData?.hbE}}} @else {}
+              </td>
+            </tr>
+            } @if (mainUI.hbA2) {
+            <tr
+              class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
+            >
+              <td class="whitespace-nowrap px-6 font-bold">Hb A<sub>2</sub></td>
+              <td class="whitespace-nowrap px-6 font-bold">
+                {{ (+mainUI.hbA2).toFixed(1) }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-1 font-medium">
+                @if (jsonData) {{{jsonData?.hbA2}}} @else {2.2-4.0}
+              </td>
+            </tr>
+            }@if (mainUI.hbC) {
             <tr
               class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
             >
@@ -474,12 +437,47 @@
               <td class="whitespace-nowrap px-6 font-bold">
                 {{ (+mainUI.hbC).toFixed(1) }}
               </td>
-                    <td class="whitespace-nowrap px-6 py-1 font-medium">
-                      @if (jsonData) {{{jsonData?.hbC}}} @else {}
-                    </td>
+              <td class="whitespace-nowrap px-6 py-1 font-medium">
+                @if (jsonData) {{{jsonData?.hbC}}} @else {}
+              </td>
             </tr>
-            } 
-            @if (mainUI.hbQ) {
+            } @if (mainUI.hbBarts) {
+            <tr
+              class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
+            >
+              <td class="whitespace-nowrap px-6 font-bold">Hb Barts</td>
+              <td class="whitespace-nowrap px-6 font-bold">
+                {{ (+mainUI.hbBarts).toFixed(1) }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-1 font-medium">
+                @if (jsonData) {{{jsonData?.hbBarts}}} @else {}
+              </td>
+            </tr>
+            } @if (mainUI.hbJ) {
+            <tr
+              class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
+            >
+              <td class="whitespace-nowrap px-6 font-bold">Hb J</td>
+              <td class="whitespace-nowrap px-6 font-bold">
+                {{ (+mainUI.hbJ).toFixed(1) }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-1 font-medium">
+                @if (jsonData) {{{jsonData?.hbJ}}} @else {}
+              </td>
+            </tr>
+            } @if (mainUI.hbL) {
+            <tr
+              class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
+            >
+              <td class="whitespace-nowrap px-6 font-bold">Hb Lepore</td>
+              <td class="whitespace-nowrap px-6 font-bold">
+                {{ (+mainUI.hbL).toFixed(1) }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-1 font-medium">
+                @if (jsonData) {{{jsonData?.hbL}}} @else {}
+              </td>
+            </tr>
+            } @if (mainUI.hbQ) {
             <tr
               class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
             >
@@ -487,11 +485,11 @@
               <td class="whitespace-nowrap px-6 font-bold">
                 {{ (+mainUI.hbQ).toFixed(1) }}
               </td>
-                    <td class="whitespace-nowrap px-6 py-1 font-medium">
-                      @if (jsonData) {{{jsonData?.hbQ}}} @else {}
-                    </td>
+              <td class="whitespace-nowrap px-6 py-1 font-medium">
+                @if (jsonData) {{{jsonData?.hbQ}}} @else {}
+              </td>
             </tr>
-            } -->
+            }
           </tbody>
           }
         </table>

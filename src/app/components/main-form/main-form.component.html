@@ -224,7 +224,7 @@
       </div>
     </div>
     <!-- Navbar End -->
-    @if (originalMainUI.length == 0) {
+    @if (originalMainUI == null) {
     <p class="text-rose-600 text-lg text-center">Please Wait for Loading...</p>
     } @if (loading) {
     <span class="loading loading-infinity loading-lg"></span>
@@ -611,9 +611,7 @@
             <div class="inline-block min-w-full py-1 sm:px-6 lg:px-8">
               <div class="overflow-hidden">
                 <table class="min-w-full text-center text-sm font-light">
-                  <thead
-                    class="border-b font-medium bg-slate-300"
-                  >
+                  <thead class="border-b font-medium bg-slate-300">
                     <tr>
                       <th scope="col" class="px-6 py-1">Name</th>
                       <th scope="col" class="px-6 py-1">%</th>
@@ -621,63 +619,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="border-b border-primary-700 text-neutral-800">
-                      <td class="whitespace-nowrap px-6 py-1 font-bold">
-                        Hb Barts
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        <input
-                          autocomplete="off"
-                          type="number"
-                          id="hbBarts"
-                          name="hbBarts"
-                          [(ngModel)]="modelMainUI.hbBarts"
-                          (focus)="onOtherFocus()"
-                          class="border-2 w-24 border-secondary-900"
-                        />
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        @if (jsonData) {{{jsonData?.hbBarts}}} @else {}
-                      </td>
-                    </tr>
-                    <tr class="border-b border-primary-700 text-neutral-800">
-                      <td class="whitespace-nowrap px-6 py-1 font-bold">
-                        Hb F
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        <input
-                          autocomplete="off"
-                          type="number"
-                          id="hbF"
-                          name="hbF"
-                          [(ngModel)]="modelMainUI.hbF"
-                          (focus)="onOtherFocus()"
-                          class="border-2 w-24 border-secondary-900"
-                        />
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        @if (jsonData) {{{jsonData?.hbF}}} @else {<2}
-                      </td>
-                    </tr>
-                    <tr class="border-b border-primary-700 text-neutral-800">
-                      <td class="whitespace-nowrap px-6 py-1 font-bold">
-                        Hb J
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        <input
-                          autocomplete="off"
-                          type="number"
-                          id="hbJ"
-                          name="hbJ"
-                          [(ngModel)]="modelMainUI.hbJ"
-                          (focus)="onOtherFocus()"
-                          class="border-2 w-24 border-secondary-900"
-                        />
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        @if (jsonData) {{{jsonData?.hbJ}}} @else {}
-                      </td>
-                    </tr>
+                    <!-- Hb A  -->
                     <tr class="border-b border-primary-700 text-neutral-800">
                       <td class="whitespace-nowrap px-6 py-1 font-bold">
                         Hb A
@@ -697,63 +639,27 @@
                         @if (jsonData) {{{jsonData?.hbA}}} @else {96.1-98.5}
                       </td>
                     </tr>
+                    <!-- Hb F  -->
                     <tr class="border-b border-primary-700 text-neutral-800">
                       <td class="whitespace-nowrap px-6 py-1 font-bold">
-                        Hb Lepore
+                        Hb F
                       </td>
                       <td class="whitespace-nowrap px-6 py-1 font-medium">
                         <input
                           autocomplete="off"
                           type="number"
-                          id="hbL"
-                          name="hbL"
-                          [(ngModel)]="modelMainUI.hbL"
+                          id="hbF"
+                          name="hbF"
+                          [(ngModel)]="modelMainUI.hbF"
                           (focus)="onOtherFocus()"
                           class="border-2 w-24 border-secondary-900"
                         />
                       </td>
                       <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        @if (jsonData) {{{jsonData?.hbL}}} @else {}
+                        @if (jsonData) {{{jsonData?.hbF}}} @else {<2}
                       </td>
                     </tr>
-                    <tr class="border-b border-primary-700 text-neutral-800">
-                      <td class="whitespace-nowrap px-6 py-1 font-bold">
-                        Hb A<sub>2</sub>
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        <input
-                          autocomplete="off"
-                          type="number"
-                          id="hbA2"
-                          name="hbA2"
-                          [(ngModel)]="modelMainUI.hbA2"
-                          (focus)="onOtherFocus()"
-                          class="border-2 w-24 border-secondary-900"
-                        />
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        @if (jsonData) {{{jsonData?.hbA2}}} @else {2.2-4.0}
-                      </td>
-                    </tr>
-                    <tr class="border-b border-primary-700 text-neutral-800">
-                      <td class="whitespace-nowrap px-6 py-1 font-bold">
-                        Hb E
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        <input
-                          autocomplete="off"
-                          type="number"
-                          id="hbE"
-                          name="hbE"
-                          [(ngModel)]="modelMainUI.hbE"
-                          (focus)="onOtherFocus()"
-                          class="border-2 w-24 border-secondary-900"
-                        />
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        @if (jsonData) {{{jsonData?.hbE}}} @else {}
-                      </td>
-                    </tr>
+                    <!-- Hb D  -->
                     <tr class="border-b border-primary-700 text-neutral-800">
                       <td class="whitespace-nowrap px-6 py-1 font-bold">
                         Hb D
@@ -773,6 +679,7 @@
                         @if (jsonData) {{{jsonData?.hbD}}} @else {}
                       </td>
                     </tr>
+                    <!-- Hb S  -->
                     <tr class="border-b border-primary-700 text-neutral-800">
                       <td class="whitespace-nowrap px-6 py-1 font-bold">
                         Hb S
@@ -792,6 +699,129 @@
                         @if (jsonData) {{{jsonData?.hbS}}} @else {}
                       </td>
                     </tr>
+                    <!-- Hb E  -->
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb E
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbE"
+                          name="hbE"
+                          [(ngModel)]="modelMainUI.hbE"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbE}}} @else {}
+                      </td>
+                    </tr>
+                    <!-- Hb A2  -->
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb A<sub>2</sub>
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbA2"
+                          name="hbA2"
+                          [(ngModel)]="modelMainUI.hbA2"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbA2}}} @else {2.2-4.0}
+                      </td>
+                    </tr>
+                    <!-- Hb C  -->
+                    <tr
+                      class="border-b border-primary-700 text-neutral-800 hidden"
+                    >
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb C
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbC"
+                          name="hbC"
+                          [(ngModel)]="modelMainUI.hbC"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbC}}} @else {}
+                      </td>
+                    </tr>
+                    <!-- Hb Barts  -->
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb Barts
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbBarts"
+                          name="hbBarts"
+                          [(ngModel)]="modelMainUI.hbBarts"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbBarts}}} @else {}
+                      </td>
+                    </tr>
+                    <!-- Hb J  -->
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb J
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbJ"
+                          name="hbJ"
+                          [(ngModel)]="modelMainUI.hbJ"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbJ}}} @else {}
+                      </td>
+                    </tr>
+                    <!-- Hb Lepore  -->
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb Lepore
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbL"
+                          name="hbL"
+                          [(ngModel)]="modelMainUI.hbL"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbL}}} @else {}
+                      </td>
+                    </tr>
+                    <!-- Hb Q  -->
                     <tr
                       class="border-b border-primary-700 text-neutral-800"
                       hidden
@@ -814,27 +844,7 @@
                         @if (jsonData) {{{jsonData?.hbQ}}} @else {}
                       </td>
                     </tr>
-                    <tr
-                      class="border-b border-primary-700 text-neutral-800 hidden"
-                    >
-                      <td class="whitespace-nowrap px-6 py-1 font-bold">
-                        Hb C
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        <input
-                          autocomplete="off"
-                          type="number"
-                          id="hbC"
-                          name="hbC"
-                          [(ngModel)]="modelMainUI.hbC"
-                          (focus)="onOtherFocus()"
-                          class="border-2 w-24 border-secondary-900"
-                        />
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        @if (jsonData) {{{jsonData?.hbC}}} @else {}
-                      </td>
-                    </tr>
+                    <!-- Hb -->
                     <tr class="border-b border-primary-700 text-neutral-800">
                       <td class="whitespace-nowrap px-6 py-1 font-bold">Hb</td>
                       <td class="whitespace-nowrap px-6 py-1 font-medium">
@@ -1181,9 +1191,7 @@
                   </h3>
                   <div class="overflow-hidden">
                     <table class="min-w-full text-left text-sm font-light">
-                      <thead
-                        class="border-b bg-white font-medium"
-                      >
+                      <thead class="border-b bg-white font-medium">
                         <tr>
                           <th scope="col" class="px-6 py-1">Code</th>
                           <th scope="col" class="px-6 py-1">Name</th>
@@ -1192,9 +1200,7 @@
                       </thead>
                       <tbody>
                         @for(doctor of doctors$ | async; track doctor.id){
-                        <tr
-                          class="border-b bg-sky-100"
-                        >
+                        <tr class="border-b bg-sky-100">
                           <td class="whitespace-nowrap px-6 py-1">
                             {{ doctor?.code }}
                           </td>
@@ -1390,9 +1396,7 @@
                   </h3>
                   <div class="overflow-hidden">
                     <table class="min-w-full text-left text-sm font-light">
-                      <thead
-                        class="border-b bg-white font-medium"
-                      >
+                      <thead class="border-b bg-white font-medium">
                         <tr>
                           <th scope="col" class="px-6 py-1">Code</th>
                           <th scope="col" class="px-6 py-1">Comment</th>
@@ -1401,9 +1405,7 @@
                       </thead>
                       <tbody>
                         @for(data of comments$ | async; track data.id){
-                        <tr
-                          class="border-b bg-sky-100"
-                        >
+                        <tr class="border-b bg-sky-100">
                           <td class="whitespace-nowrap px-6 py-1">
                             {{ data?.code }}
                           </td>
@@ -1600,9 +1602,7 @@
                   </h3>
                   <div class="overflow-hidden">
                     <table class="min-w-full text-left text-sm font-light">
-                      <thead
-                        class="border-b bg-white font-medium"
-                      >
+                      <thead class="border-b bg-white font-medium">
                         <tr>
                           <th scope="col" class="px-6 py-1">Code</th>
                           <th scope="col" class="px-6 py-1">Advice</th>
@@ -1611,9 +1611,7 @@
                       </thead>
                       <tbody>
                         @for(data of advices$ | async; track data.id){
-                        <tr
-                          class="border-b bg-sky-100"
-                        >
+                        <tr class="border-b bg-sky-100">
                           <td class="whitespace-nowrap px-6 py-1">
                             {{ data?.code }}
                           </td>
@@ -1832,9 +1830,7 @@
                   </h3>
                   <div class="overflow-hidden">
                     <table class="min-w-full text-left text-sm font-light">
-                      <thead
-                        class="border-b bg-white font-medium"
-                      >
+                      <thead class="border-b bg-white font-medium">
                         <tr>
                           <th scope="col" class="px-6 py-1">Name</th>
                           <th scope="col" class="px-6 py-1">Degree</th>
@@ -1844,9 +1840,7 @@
                       </thead>
                       <tbody>
                         @for(seal of seals$ | async; track seal.id){
-                        <tr
-                          class="border-b bg-sky-100"
-                        >
+                        <tr class="border-b bg-sky-100">
                           <td class="whitespace-nowrap px-6 py-1">
                             {{ seal?.name }}
                           </td>

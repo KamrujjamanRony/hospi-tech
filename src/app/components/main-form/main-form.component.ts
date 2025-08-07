@@ -31,10 +31,10 @@ import { CommentService } from '../../services/comment.service';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-    selector: 'app-main-form',
-    imports: [CommonModule, FormsModule, NgClass, ReactiveFormsModule],
-    templateUrl: './main-form.component.html',
-    styleUrl: './main-form.component.css'
+  selector: 'app-main-form',
+  imports: [CommonModule, FormsModule, NgClass, ReactiveFormsModule],
+  templateUrl: './main-form.component.html',
+  styleUrl: './main-form.component.css'
 })
 export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
   dataService = inject(DataService);
@@ -57,7 +57,7 @@ export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
   searchMainUI: any[] = [];
   asideMainUI: any[] = [];
   mainUI$?: Observable<any[]>;
-  originalMainUI: any[] = [];
+  originalMainUI: any = null;
   doctors$?: Observable<any[]>;
   originalDoctors: any[] = [];
   doctors: any[] = [];
@@ -332,7 +332,7 @@ export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
   // Aside mainUI data by date
   filterByDate() {
     this.asideMainUI = this.originalMainUI.filter(
-      (a) => this.transformDate(a.date) == this.transformDate(this.modelMainUI.date)
+      (a: any) => this.transformDate(a.date) == this.transformDate(this.modelMainUI.date)
     )
     console.log(this.asideMainUI)
   }
@@ -347,7 +347,7 @@ export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
       // search conditions
       const searchTermLower = search.toLowerCase();
       this.searchMainUI = this.originalMainUI.filter(
-        (a) => a.pid && a.pid.toLowerCase().startsWith(searchTermLower) && this.transformDate(a.date) == this.transformDate(this.modelMainUI.date)
+        (a: any) => a.pid && a.pid.toLowerCase().startsWith(searchTermLower) && this.transformDate(a.date) == this.transformDate(this.modelMainUI.date)
       )
     } else {
       // If the search term is empty, reset the product list

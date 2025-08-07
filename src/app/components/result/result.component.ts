@@ -15,10 +15,10 @@ import { MainUIService } from '../../services/main-ui.service';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-    selector: 'app-result',
-    imports: [CommonModule, CanvasJSAngularChartsModule, FormsModule, RouterLink],
-    templateUrl: './result.component.html',
-    styleUrl: './result.component.css'
+  selector: 'app-result',
+  imports: [CommonModule, CanvasJSAngularChartsModule, FormsModule, RouterLink],
+  templateUrl: './result.component.html',
+  styleUrl: './result.component.css'
 })
 export class ResultComponent implements OnInit, OnDestroy {
   dataService = inject(DataService);
@@ -167,7 +167,7 @@ export class ResultComponent implements OnInit, OnDestroy {
       axisY: {
         title: 'Area',
         gridColor: "lightGray",
-        maximum: 105,     
+        maximum: 105,
         interval: 25,
       },
       axisX: {
@@ -357,25 +357,25 @@ export class ResultComponent implements OnInit, OnDestroy {
             { x: 999999999, y: 0 },
           ],
         },
-        // {
-        //   type: 'splineArea',
-        //   indexLabelFontSize: 9,
-        //   name: 'hb C',
-        //   markerSize: 0,
-        //   color: 'rgba(103, 117, 213,.7)',
-        //   dataPoints: [
-        //     { x: -999999999, y: 0 },
-        //     { x: 320, y: 0 },
-        //     {
-        //       x: 330,
-        //       y: this.mainUI?.hbC,
-        //       indexLabel: "Hb C",
-        //       indexLabelFontColor: 'black',  indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
-        //     },
-        //     { x: 340, y: 0 },
-        //     { x: 999999999, y: 0 },
-        //   ],
-        // },
+        {
+          type: 'splineArea',
+          indexLabelFontSize: 9,
+          name: 'hb C',
+          markerSize: 0,
+          color: 'rgba(103, 117, 213,.7)',
+          dataPoints: [
+            { x: -999999999, y: 0 },
+            { x: 320, y: 0 },
+            {
+              x: 330,
+              y: this.mainUI?.hbC,
+              indexLabel: "Hb C",
+              indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
+            },
+            { x: 340, y: 0 },
+            { x: 999999999, y: 0 },
+          ],
+        },
         // {
         //   type: 'splineArea',
         //   indexLabelFontSize: 9,
