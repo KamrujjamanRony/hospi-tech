@@ -202,7 +202,6 @@ export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit() {
     this.dataService.getJsonData().subscribe(data => {
       this.jsonData = data.data.find((d: { id: any; }) => d.id == this.companyID);
-      console.log(this.jsonData);
     });
 
     // disable future date
@@ -334,7 +333,6 @@ export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
     this.asideMainUI = this.originalMainUI.filter(
       (a: any) => this.transformDate(a.date) == this.transformDate(this.modelMainUI.date)
     )
-    console.log(this.asideMainUI)
   }
 
   // Search mainUI data by name
@@ -360,7 +358,7 @@ export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
   onMainUIClick(id: string) {
     this.editMainUISubscription = this.mainUIService.getMainUI(id).subscribe({
       next: (response) => {
-        console.log(response)
+        // console.log(response)
         this.modelMainUI.companyID = response.companyID;
         this.modelMainUI.date = this.transformDate(response.date);
         this.modelMainUI.pid = response.pid;
@@ -400,7 +398,7 @@ export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
   // Add & Update MainUI Form
   onFormSubmit(): void {
     if (this.modelMainUI.pid && this.modelMainUI.name && this.modelMainUI.age && this.modelMainUI.pid != 'null' && this.modelMainUI.name != 'null' && this.modelMainUI.age != 'null') {
-      console.log(this.modelMainUI.others1)
+      // console.log(this.modelMainUI.others1)
       const addData = new FormData();
       addData.append('CompanyID', this.companyID.toString());
       addData.append('Date', this.transformDate(this.modelMainUI.date));
@@ -471,7 +469,7 @@ export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
         editData.forEach((value, key) => {
           jsonObject[key] = value;
         });
-        console.log(JSON.stringify(jsonObject, null, 2));
+        // console.log(JSON.stringify(jsonObject, null, 2));
         // Update MainUI by Id
         this.editMainUISubscription = this.mainUIService
           .updateMainUI(this.editMainUIId, editData)

@@ -2,7 +2,7 @@ export const environment = {
     production: false,
     authKey: '333',
     viewKey: '123',
-    cCode: 'h',
+    cCode: 'H',
     DoctorApi: 'https://d.supersoftbd.com/apiA/RefDr',
     SealApi: 'https://d.supersoftbd.com/apiA/SetSeal',
     CommentApi: 'https://d.supersoftbd.com/apiA/Comment',

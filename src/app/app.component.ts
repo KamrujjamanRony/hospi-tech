@@ -1,21 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.css',
-    imports: [RouterOutlet]
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
+  imports: [RouterOutlet]
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'hospitech';
-  constructor(private location: Location) { }
-
-  // Reload the page or perform any other actions
-  ngOnInit() {
-    // this.location.subscribe(() => {
-    //   window.location.reload();
-    // });
-  }
 }

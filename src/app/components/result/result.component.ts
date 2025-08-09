@@ -84,7 +84,7 @@ export class ResultComponent implements OnInit, OnDestroy {
           this.mainUIService.getMainUI(this.id).subscribe({
             next: (response) => {
               this.mainUI = response;
-              console.log(response)
+              // console.log(response)
               this.commentCode = response.comCode;
               this.adviceCode = response.advCode;
               this.refDoctorCode = response.refCode;
@@ -174,7 +174,7 @@ export class ResultComponent implements OnInit, OnDestroy {
         title: 'Time',
         interval: 40,
         viewportMinimum: 0,
-        viewportMaximum: 370
+        viewportMaximum: 300
       },
       toolTip: {
         shared: true,
@@ -186,19 +186,19 @@ export class ResultComponent implements OnInit, OnDestroy {
         {
           type: 'splineArea',
           indexLabelFontSize: 9,
-          name: 'Hb Barts',
+          name: 'Hb A',
           markerSize: 0,
           color: 'rgba(134,180,2,.7)',
           dataPoints: [
             { x: -999999999, y: 0 },
-            { x: 0, y: 0 },
+            { x: 30, y: 0 },
             {
-              x: 15,
-              y: this.mainUI?.hbBarts,
-              indexLabel: "Hb Barts",
+              x: 45,
+              y: this.mainUI?.hbA,
+              indexLabel: "Hb A",
               indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 45
             },
-            { x: 30, y: 0 },
+            { x: 60, y: 0 },
             { x: 999999999, y: 0 },
           ],
         },
@@ -210,73 +210,53 @@ export class ResultComponent implements OnInit, OnDestroy {
           color: 'rgba(34,180,112,.7)',
           dataPoints: [
             { x: -999999999, y: 0 },
-            { x: 35, y: 0 },
+            { x: 65, y: 0 },
             {
-              x: 50,
+              x: 80,
               y: this.mainUI?.hbF,
               indexLabel: "Hb F",
               indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
             },
-            { x: 65, y: 0 },
+            { x: 95, y: 0 },
             { x: 999999999, y: 0 },
           ],
         },
         {
           type: 'splineArea',
           indexLabelFontSize: 9,
-          name: 'Hb J',
+          name: 'Hb D',
           markerSize: 0,
           color: 'rgba(241, 196, 15,.7)',
           dataPoints: [
             { x: -999999999, y: 0 },
-            { x: 125, y: 0 },
+            { x: 100, y: 0 },
             {
-              x: 140,
-              y: this.mainUI?.hbJ,
-              indexLabel: "Hb J",
+              x: 115,
+              y: this.mainUI?.hbD,
+              indexLabel: "Hb D",
               indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
             },
-            { x: 155, y: 0 },
+            { x: 130, y: 0 },
             { x: 999999999, y: 0 },
           ],
         },
         {
           type: 'splineArea',
           indexLabelFontSize: 9,
-          name: 'hb A',
+          name: 'hb S',
           markerSize: 0,
           color: 'rgba(154,18,133,.7)',
           dataPoints: [
             { x: -999999999, y: 0 },
-            { x: 155, y: 0 },
+            { x: 135, y: 0 },
             {
-              x: 170,
-              y: this.mainUI?.hbA,
-              indexLabel: "Hb A",
+              x: 150,
+              y: this.mainUI?.hbS,
+              indexLabel: "Hb S",
               indexLabelFontColor: 'black',
               indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
             },
-            { x: 185, y: 0 },
-            { x: 999999999, y: 0 },
-          ],
-        },
-        {
-          type: 'splineArea',
-          indexLabelFontSize: 9,
-          name: 'hb Lepore',
-          markerSize: 0,
-          color: 'rgba(54,158,173,.7)',
-          dataPoints: [
-            { x: -999999999, y: 0 },
-            { x: 185, y: 0 },
-            {
-              x: 200,
-              y: this.mainUI?.hbL,
-              indexLabel: "Hb L",
-              indexLabelFontColor: 'black',
-              indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
-            },
-            { x: 215, y: 0 },
+            { x: 165, y: 0 },
             { x: 999999999, y: 0 },
           ],
         },
@@ -288,14 +268,14 @@ export class ResultComponent implements OnInit, OnDestroy {
           color: 'rgba(22,170,16,.7)',
           dataPoints: [
             { x: -999999999, y: 0 },
-            { x: 225, y: 0 },
+            { x: 170, y: 0 },
             {
-              x: 240,
+              x: 185,
               y: this.mainUI?.hbE,
               indexLabel: "Hb E",
               indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
             },
-            { x: 255, y: 0 },
+            { x: 200, y: 0 },
             { x: 999999999, y: 0 },
           ],
         },
@@ -307,53 +287,14 @@ export class ResultComponent implements OnInit, OnDestroy {
           color: 'rgba(94,0,226,.7)',
           dataPoints: [
             { x: -999999999, y: 0 },
-            { x: 240, y: 0 },
+            { x: 185, y: 0 },
             {
-              x: 255,
+              x: 200,
               y: this.mainUI?.hbA2,
               indexLabel: "Hb A2",
               indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
             },
-            { x: 270, y: 0 },
-            { x: 999999999, y: 0 },
-          ],
-        },
-        {
-          type: 'splineArea',
-          indexLabelFontSize: 9,
-          name: 'Hb D',
-          markerSize: 0,
-          color: 'rgba(194,70,66,.7)',
-          dataPoints: [
-            { x: -999999999, y: 0 },
-            { x: 270, y: 0 },
-            {
-              x: 285,
-              y: this.mainUI?.hbD,
-              indexLabel: "Hb D",
-              indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
-            },
-            { x: 300, y: 0 },
-            { x: 999999999, y: 0 },
-          ],
-        },
-        {
-          type: 'splineArea',
-          indexLabelFontSize: 9,
-          name: 'hb S',
-          markerSize: 0,
-          color: 'rgba(103, 117, 213,.7)',
-          dataPoints: [
-
-            { x: -999999999, y: 0 },
-            { x: 315, y: 0 },
-            {
-              x: 330,
-              y: this.mainUI?.hbS,
-              indexLabel: "Hb S",
-              indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
-            },
-            { x: 345, y: 0 },
+            { x: 215, y: 0 },
             { x: 999999999, y: 0 },
           ],
         },
@@ -365,36 +306,17 @@ export class ResultComponent implements OnInit, OnDestroy {
           color: 'rgba(103, 117, 213,.7)',
           dataPoints: [
             { x: -999999999, y: 0 },
-            { x: 320, y: 0 },
+            { x: 220, y: 0 },
             {
-              x: 330,
+              x: 235,
               y: this.mainUI?.hbC,
               indexLabel: "Hb C",
               indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
             },
-            { x: 340, y: 0 },
+            { x: 250, y: 0 },
             { x: 999999999, y: 0 },
           ],
         },
-        // {
-        //   type: 'splineArea',
-        //   indexLabelFontSize: 9,
-        //   name: 'hb Q',
-        //   markerSize: 0,
-        //   color: 'rgba(13, 217, 177,.7)',
-        //   dataPoints: [
-        //     { x: -999999999, y: 0 },
-        //     { x: 330, y: 0 },
-        //     {
-        //       x: 340,
-        //       y: this.mainUI?.hbQ,
-        //       indexLabel: "HbQ", ${this.mainUI?.hbQ})`,
-        //       indexLabelFontColor: 'black',  indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
-        //     },
-        //     { x: 350, y: 0 },
-        //     { x: 999999999, y: 0 },
-        //   ],
-        // },
       ],
     };
     // The chart ends
@@ -403,7 +325,7 @@ export class ResultComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.dataService.getJsonData().subscribe(data => {
       this.jsonData = data.data.find((d: { id: any; }) => d.id == this.companyID);
-      console.log(this.jsonData)
+      // console.log(this.jsonData)
     });
     initTE({ Input, Select, Collapse }, { allowReinits: true });
   }

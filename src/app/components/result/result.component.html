@@ -326,11 +326,7 @@
   class="max-w-2xl mx-auto relative h-[300px]"
   [class.left-when-printing]="isPrinting"
 >
-  @if (companyID == 7) {
-  <canvasjs-chart [options]="chartOptions7"></canvasjs-chart>
-  } @else {
   <canvasjs-chart [options]="chartOptions"></canvasjs-chart>
-  }
   <div
     class="lg:w-48 md:w-32 w-32 h-5 bg-white absolute bottom-0 xl:right-[-2%] lg:right-0 right-0"
     [class.position-when-printing]="isPrinting"
@@ -439,54 +435,6 @@
               </td>
               <td class="whitespace-nowrap px-6 py-1 font-medium">
                 @if (jsonData) {{{jsonData?.hbC}}} @else {}
-              </td>
-            </tr>
-            } @if (mainUI.hbBarts) {
-            <tr
-              class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
-            >
-              <td class="whitespace-nowrap px-6 font-bold">Hb Barts</td>
-              <td class="whitespace-nowrap px-6 font-bold">
-                {{ (+mainUI.hbBarts).toFixed(1) }}
-              </td>
-              <td class="whitespace-nowrap px-6 py-1 font-medium">
-                @if (jsonData) {{{jsonData?.hbBarts}}} @else {}
-              </td>
-            </tr>
-            } @if (mainUI.hbJ) {
-            <tr
-              class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
-            >
-              <td class="whitespace-nowrap px-6 font-bold">Hb J</td>
-              <td class="whitespace-nowrap px-6 font-bold">
-                {{ (+mainUI.hbJ).toFixed(1) }}
-              </td>
-              <td class="whitespace-nowrap px-6 py-1 font-medium">
-                @if (jsonData) {{{jsonData?.hbJ}}} @else {}
-              </td>
-            </tr>
-            } @if (mainUI.hbL) {
-            <tr
-              class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
-            >
-              <td class="whitespace-nowrap px-6 font-bold">Hb Lepore</td>
-              <td class="whitespace-nowrap px-6 font-bold">
-                {{ (+mainUI.hbL).toFixed(1) }}
-              </td>
-              <td class="whitespace-nowrap px-6 py-1 font-medium">
-                @if (jsonData) {{{jsonData?.hbL}}} @else {}
-              </td>
-            </tr>
-            } @if (mainUI.hbQ) {
-            <tr
-              class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
-            >
-              <td class="whitespace-nowrap px-6 font-bold">Hb Q</td>
-              <td class="whitespace-nowrap px-6 font-bold">
-                {{ (+mainUI.hbQ).toFixed(1) }}
-              </td>
-              <td class="whitespace-nowrap px-6 py-1 font-medium">
-                @if (jsonData) {{{jsonData?.hbQ}}} @else {}
               </td>
             </tr>
             }
