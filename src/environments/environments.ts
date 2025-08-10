@@ -11,3 +11,5 @@ export const environment = {
     MainUIApi: 'https://d.supersoftbd.com/apiA/MainUI',
     CompanyApi: 'https://d.supersoftbd.com/apiA/CompanyName',
 };
+
+// https://d.supersoftbd.com/apiA
