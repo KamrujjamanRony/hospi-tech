@@ -845,6 +845,67 @@
         <div
           class="w-full flex md:flex-row flex-col gap-2 md:gap-5 mb-2 md:mb-0 mt-2 md:mt-0"
         >
+          <!-- Comment Selection -->
+          <!-- <div class="md:col-span-2">
+            <div class="flex items-end space-x-4">
+              <div class="flex-1">
+                <label class="block text-sm font-medium text-gray-700 mb-0.5">
+                  Comment
+                </label>
+
+                @if (!showAddCommentInput()) {
+                <select
+                  [(ngModel)]="modelMainUI.comCode"
+                  name="comment"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md"
+                >
+                  <option [value]="undefined">---Select---</option>
+                  @for (comment of comments; track comment.id) {
+                  <option [value]="comment.code">{{ comment.comments }}</option>
+                  }
+                </select>
+                } @if (showAddCommentInput()) {
+                <div class="space-y-2">
+                  <input
+                    type="text"
+                    [value]="newCommentName()"
+                    (input)="newCommentName.set($any($event.target).value)"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md"
+                    placeholder="Enter new comment name"
+                    (keyup.enter)="addNewComment()"
+                  />
+                  <div class="flex space-x-2">
+                    <button
+                      type="button"
+                      (click)="addNewComment()"
+                      class="px-4 py-1 bg-green-500 text-white text-sm rounded"
+                    >
+                      Save
+                    </button>
+                    <button
+                      type="button"
+                      (click)="showAddCommentInput.set(false)"
+                      class="px-4 py-1 bg-gray-500 text-white text-sm rounded"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+                }
+              </div>
+
+              @if (!showAddCommentInput()) {
+              <button
+                type="button"
+                (click)="showAddCommentInput.set(true)"
+                class="px-6 py-2 bg-blue-500 text-white rounded-md"
+              >
+                Add New
+              </button>
+              }
+            </div>
+          </div> -->
+
           <!-- comment -->
           <div class="w-full md:w-1/2">
             <div class="mb:mb-3 mb-1">
@@ -905,10 +966,53 @@
             </div>
           </div>
         </div>
+        <!-- Input Row 05 -->
+        <div
+          class="w-full flex md:flex-row flex-col gap-2 md:gap-5 mb-2 md:mb-0 mt-2 md:mt-0"
+        >
+          <!-- others1 -->
+          <div class="mt-3 w-full">
+            <div class="relative mb-4" data-te-input-wrapper-init>
+              <label
+                for="others1"
+                class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+                >Comment
+              </label>
+              <textarea
+                class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+                id="others1"
+                name="others1"
+                autocomplete="off"
+                rows="3"
+                placeholder="Type Comment"
+                [(ngModel)]="modelMainUI.others1"
+              ></textarea>
+            </div>
+          </div>
+          <!-- others2 -->
+          <div class="mt-3 w-full">
+            <div class="relative mb-4" data-te-input-wrapper-init>
+              <label
+                for="others2"
+                class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
+                >Advice
+              </label>
+              <textarea
+                class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
+                id="others2"
+                name="others2"
+                autocomplete="off"
+                rows="3"
+                placeholder="Type Comment"
+                [(ngModel)]="modelMainUI.others2"
+              ></textarea>
+            </div>
+          </div>
+        </div>
 
         <div class="pb-1 pt-1 text-center">
           <input
-            class="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+            class="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] cursor-pointer"
             type="submit"
             data-te-submit-btn-ref
             Validate

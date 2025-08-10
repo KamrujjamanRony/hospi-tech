@@ -323,7 +323,7 @@
 <!-- Chart -->
 @if (mainUI) {
 <div
-  class="max-w-2xl mx-auto relative h-[300px]"
+  class="max-w-2xl mx-auto relative h-[450px]"
   [class.left-when-printing]="isPrinting"
 >
   <canvasjs-chart [options]="chartOptions"></canvasjs-chart>
@@ -457,6 +457,12 @@
     &nbsp;&nbsp;
     <p style="white-space: pre-line">{{ comment.comments }}</p>
   </div>
+  } @if (mainUI?.others1) {
+  <div class="text-sm flex mt-2">
+    <p class="font-bold">Comments &nbsp;:</p>
+    &nbsp;&nbsp;
+    <p style="white-space: pre-line">{{ mainUI?.others1 }}</p>
+  </div>
   }
   <!-- Advice -->
   @if (advice?.advices) {
@@ -464,6 +470,12 @@
     <p class="font-bold">Advice &nbsp;:</p>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <p style="white-space: pre-line">{{ advice.advices }}</p>
+  </div>
+  } @if (mainUI?.others2) {
+  <div class="text-sm mt-2 flex">
+    <p class="font-bold">Advice &nbsp;:</p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p style="white-space: pre-line">{{ mainUI?.others2 }}</p>
   </div>
   }
 

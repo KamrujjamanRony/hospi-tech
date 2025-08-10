@@ -159,7 +159,7 @@ export class ResultComponent implements OnInit, OnDestroy {
     // The chart start position
     this.chartOptions = {
       animationEnabled: true,
-      height: 300,
+      height: 450,
       title: {
         text: 'Haemoglobin Electrophoresis',
         fontSize: 20,

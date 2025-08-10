@@ -7,6 +7,7 @@ import {
   OnInit,
   Renderer2,
   inject,
+  signal,
   viewChild
 } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,7 +22,7 @@ import {
   Toast
 } from 'tw-elements';
 import { Router } from '@angular/router';
-import { Observable, Subscription, catchError, of, switchMap } from 'rxjs';
+import { Observable, Subscription, catchError, firstValueFrom, of, switchMap } from 'rxjs';
 import { AdviceService } from '../../services/advice.service';
 import { DataService } from '../../services/data.service';
 import { MainUIService } from '../../services/main-ui.service';
@@ -64,6 +65,9 @@ export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
   comments$?: Observable<any[]>;
   originalComments: any[] = [];
   comments: any[] = [];
+  showAddCommentInput = signal(false);
+  refreshSignal = signal(0);
+  newCommentName = signal('');
   comment!: any;
   advices$?: Observable<any[]>;
   originalAdvices: any[] = [];
@@ -115,6 +119,7 @@ export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
       this.Company$ = authService.getCompanyById(this.companyID);
       this.Company$.subscribe((data) => {
         this.Company = data[0];
+        console.log(this.Company)
       });
     }
     // Initialize modelMainUI properties
@@ -262,6 +267,26 @@ export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
   transformDate(dateString: string): any {
     const date = new Date(dateString);
     return this.datePipe.transform(date, 'yyyy-MM-dd');
+  }
+
+  async addNewComment() {
+    const comments = this.newCommentName().trim();
+    if (!comments) return;
+
+    try {
+      const addComment = new FormData();
+      addComment.append('CompanyID', this.companyID.toString());
+      addComment.append('Comments', comments);
+      addComment.append('Code', '1');
+      const newArea: any = await firstValueFrom(this.commentService.addComment(addComment));
+      this.comments = [...this.comments, newArea];
+      this.modelMainUI.comCode = Number(newArea.id);
+      this.showAddCommentInput.set(false);
+      this.newCommentName.set('');
+      console.log('Area added');
+    } catch (error) {
+      console.log('Failed to add area');
+    }
   }
 
   // handle keyboard navigation
