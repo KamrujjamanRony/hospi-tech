@@ -221,10 +221,10 @@
 <!-- Heading -->
 <div [class.margin-top-when-printing]="isPrinting">
   <div
-    class="bg-black p-[2px] rounded-md max-w-4xl mx-auto text-sm mt-5"
+    class="bg-black p-[2px] rounded-md max-w-4xl mx-auto text-sm mt-5 font-bold"
     [class.black-when-printing]="isPrinting"
   >
-    <div class="bg-white p-1 rounded-md shadow-md">
+    <div class="bg-white p-1 rounded-md shadow-md text-black">
       <div
         class="flex md:flex-row flex-col justify-between"
         [class.flex-when-printing]="isPrinting"
@@ -235,7 +235,7 @@
               >ID No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </span
             >&nbsp;<span class="font-bold">{{ mainUI?.pid }}</span>
           </p>
-          <p class="barCode pt-1">{{ mainUI?.pid }}</p>
+          <p class="barCode pt-1 font-normal">{{ mainUI?.pid }}</p>
         </div>
         @if (mainUI?.sampleID) {
         <div class="flex justify-between relative">
@@ -314,7 +314,7 @@
   </div>
 </div>
 
-<div class="max-w-5xl mx-auto text-center">
+<div class="max-w-5xl mx-auto text-center text-black font-bold tracking-wider">
   <h1 class="text-sm text-green-800">
     {{ jsonData?.title }}
   </h1>
@@ -323,7 +323,7 @@
 <!-- Chart -->
 @if (mainUI) {
 <div
-  class="max-w-2xl mx-auto relative h-[450px]"
+  class="max-w-xl mx-auto relative h-[350px] text-black"
   [class.left-when-printing]="isPrinting"
 >
   <canvasjs-chart [options]="chartOptions"></canvasjs-chart>
@@ -333,13 +333,13 @@
   ></div>
 </div>
 } @if (mainUI?.hb) {
-<p class="text-center font-bold">
+<p class="text-center font-bold text-black">
   Hb Conc in % = {{ mainUI?.hb }} @if (jsonData) {{{jsonData?.hb}}}
 </p>
 }
 
 <!-- Table -->
-<div class="flex flex-col max-w-2xl mx-auto -mt-1">
+<div class="flex flex-col max-w-xl mx-auto text-black mt-5">
   <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="inline-block min-w-full sm:px-6 lg:px-8">
       <div class="overflow-hidden">
@@ -446,7 +446,10 @@
   </div>
 </div>
 
-<div class="max-w-3xl mx-auto" [class.margin-left-when-printing]="isPrinting">
+<div
+  class="max-w-3xl mx-auto text-black"
+  [class.margin-left-when-printing]="isPrinting"
+>
   <!-- Comments -->
   @if (comment?.comments) {
   <div class="text-sm flex">

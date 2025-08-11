@@ -159,28 +159,30 @@ export class ResultComponent implements OnInit, OnDestroy {
     // The chart start position
     this.chartOptions = {
       animationEnabled: true,
-      height: 450,
+      height: 350,
       title: {
         text: 'Haemoglobin Electrophoresis',
         fontSize: 20,
       },
       axisY: {
-        title: 'Area',
+        // title: 'Area',
+        labelFontSize: 10,
         gridColor: "lightGray",
         maximum: 105,
         interval: 25,
       },
       axisX: {
-        title: 'Time',
-        interval: 40,
+        // title: 'Time',
+        labelFontSize: 10,
+        interval: 20,
         viewportMinimum: 0,
-        viewportMaximum: 300
+        viewportMaximum: 310
       },
       toolTip: {
         shared: true,
       },
       legend: {
-        fontSize: 9,
+        fontSize: 7,
       },
       data: [
         {
@@ -191,14 +193,14 @@ export class ResultComponent implements OnInit, OnDestroy {
           color: 'rgba(222, 49, 99,.9)',
           dataPoints: [
             { x: -999999999, y: 0 },
-            { x: 30, y: 0 },
+            { x: 145, y: 0 },
             {
-              x: 45,
+              x: 150,
               y: this.mainUI?.hbA,
               indexLabel: "Hb A",
               indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 45
             },
-            { x: 60, y: 0 },
+            { x: 155, y: 0 },
             { x: 999999999, y: 0 },
           ],
         },
@@ -207,17 +209,17 @@ export class ResultComponent implements OnInit, OnDestroy {
           indexLabelFontSize: 9,
           name: 'Hb F',
           markerSize: 0,
-          color: 'rgba(34,180,112,.9)',
+          color: 'rgba(255, 191, 0,.9)',
           dataPoints: [
             { x: -999999999, y: 0 },
-            { x: 65, y: 0 },
+            { x: 185, y: 0 },
             {
-              x: 80,
+              x: 190,
               y: this.mainUI?.hbF,
               indexLabel: "Hb F",
               indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
             },
-            { x: 95, y: 0 },
+            { x: 195, y: 0 },
             { x: 999999999, y: 0 },
           ],
         },
@@ -226,17 +228,17 @@ export class ResultComponent implements OnInit, OnDestroy {
           indexLabelFontSize: 9,
           name: 'Hb D',
           markerSize: 0,
-          color: 'rgba(241, 196, 15,.9)',
+          color: 'rgba(22,170,16,.9)',
           dataPoints: [
             { x: -999999999, y: 0 },
-            { x: 100, y: 0 },
+            { x: 205, y: 0 },
             {
-              x: 115,
+              x: 210,
               y: this.mainUI?.hbD,
               indexLabel: "Hb D",
               indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
             },
-            { x: 130, y: 0 },
+            { x: 215, y: 0 },
             { x: 999999999, y: 0 },
           ],
         },
@@ -248,15 +250,15 @@ export class ResultComponent implements OnInit, OnDestroy {
           color: 'rgba(154,18,133,.9)',
           dataPoints: [
             { x: -999999999, y: 0 },
-            { x: 135, y: 0 },
+            { x: 255, y: 0 },
             {
-              x: 150,
+              x: 260,
               y: this.mainUI?.hbS,
               indexLabel: "Hb S",
               indexLabelFontColor: 'black',
               indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
             },
-            { x: 165, y: 0 },
+            { x: 265, y: 0 },
             { x: 999999999, y: 0 },
           ],
         },
@@ -265,17 +267,17 @@ export class ResultComponent implements OnInit, OnDestroy {
           indexLabelFontSize: 9,
           name: 'Hb E',
           markerSize: 0,
-          color: 'rgba(22,170,16,.9)',
+          color: 'rgba(128,128,128,.9)',
           dataPoints: [
             { x: -999999999, y: 0 },
-            { x: 170, y: 0 },
+            { x: 225, y: 0 },
             {
-              x: 185,
+              x: 230,
               y: this.mainUI?.hbE,
               indexLabel: "Hb E",
               indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
             },
-            { x: 200, y: 0 },
+            { x: 235, y: 0 },
             { x: 999999999, y: 0 },
           ],
         },
@@ -287,14 +289,14 @@ export class ResultComponent implements OnInit, OnDestroy {
           color: 'rgba(94,0,226,.9)',
           dataPoints: [
             { x: -999999999, y: 0 },
-            { x: 185, y: 0 },
+            { x: 238, y: 0 },
             {
-              x: 200,
+              x: 243,
               y: this.mainUI?.hbA2,
               indexLabel: "Hb A2",
               indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
             },
-            { x: 215, y: 0 },
+            { x: 248, y: 0 },
             { x: 999999999, y: 0 },
           ],
         },
@@ -306,14 +308,14 @@ export class ResultComponent implements OnInit, OnDestroy {
           color: 'rgba(103, 117, 213,.9)',
           dataPoints: [
             { x: -999999999, y: 0 },
-            { x: 220, y: 0 },
+            { x: 270, y: 0 },
             {
-              x: 235,
+              x: 275,
               y: this.mainUI?.hbC,
               indexLabel: "Hb C",
               indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 35
             },
-            { x: 250, y: 0 },
+            { x: 280, y: 0 },
             { x: 999999999, y: 0 },
           ],
         },
