@@ -188,7 +188,7 @@ export class ResultComponent implements OnInit, OnDestroy {
           indexLabelFontSize: 9,
           name: 'Hb A',
           markerSize: 0,
-          color: 'rgba(134,180,2,.7)',
+          color: 'rgba(222, 49, 99,.9)',
           dataPoints: [
             { x: -999999999, y: 0 },
             { x: 30, y: 0 },
@@ -207,7 +207,7 @@ export class ResultComponent implements OnInit, OnDestroy {
           indexLabelFontSize: 9,
           name: 'Hb F',
           markerSize: 0,
-          color: 'rgba(34,180,112,.7)',
+          color: 'rgba(34,180,112,.9)',
           dataPoints: [
             { x: -999999999, y: 0 },
             { x: 65, y: 0 },
@@ -226,7 +226,7 @@ export class ResultComponent implements OnInit, OnDestroy {
           indexLabelFontSize: 9,
           name: 'Hb D',
           markerSize: 0,
-          color: 'rgba(241, 196, 15,.7)',
+          color: 'rgba(241, 196, 15,.9)',
           dataPoints: [
             { x: -999999999, y: 0 },
             { x: 100, y: 0 },
@@ -245,7 +245,7 @@ export class ResultComponent implements OnInit, OnDestroy {
           indexLabelFontSize: 9,
           name: 'hb S',
           markerSize: 0,
-          color: 'rgba(154,18,133,.7)',
+          color: 'rgba(154,18,133,.9)',
           dataPoints: [
             { x: -999999999, y: 0 },
             { x: 135, y: 0 },
@@ -265,7 +265,7 @@ export class ResultComponent implements OnInit, OnDestroy {
           indexLabelFontSize: 9,
           name: 'Hb E',
           markerSize: 0,
-          color: 'rgba(22,170,16,.7)',
+          color: 'rgba(22,170,16,.9)',
           dataPoints: [
             { x: -999999999, y: 0 },
             { x: 170, y: 0 },
@@ -284,7 +284,7 @@ export class ResultComponent implements OnInit, OnDestroy {
           indexLabelFontSize: 9,
           name: 'Hb A2',
           markerSize: 0,
-          color: 'rgba(94,0,226,.7)',
+          color: 'rgba(94,0,226,.9)',
           dataPoints: [
             { x: -999999999, y: 0 },
             { x: 185, y: 0 },
@@ -303,7 +303,7 @@ export class ResultComponent implements OnInit, OnDestroy {
           indexLabelFontSize: 9,
           name: 'hb C',
           markerSize: 0,
-          color: 'rgba(103, 117, 213,.7)',
+          color: 'rgba(103, 117, 213,.9)',
           dataPoints: [
             { x: -999999999, y: 0 },
             { x: 220, y: 0 },

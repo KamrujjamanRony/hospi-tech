@@ -315,7 +315,7 @@
 </div>
 
 <div class="max-w-5xl mx-auto text-center">
-  <h1 class="text-sm text-green-800 my-2">
+  <h1 class="text-sm text-green-800">
     {{ jsonData?.title }}
   </h1>
 </div>
@@ -339,7 +339,7 @@
 }
 
 <!-- Table -->
-<div class="flex flex-col max-w-2xl mx-auto">
+<div class="flex flex-col max-w-2xl mx-auto -mt-1">
   <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="inline-block min-w-full sm:px-6 lg:px-8">
       <div class="overflow-hidden">
@@ -446,19 +446,16 @@
   </div>
 </div>
 
-<div
-  class="max-w-3xl mx-auto mt-1"
-  [class.margin-left-when-printing]="isPrinting"
->
+<div class="max-w-3xl mx-auto" [class.margin-left-when-printing]="isPrinting">
   <!-- Comments -->
   @if (comment?.comments) {
-  <div class="text-sm flex mt-2">
+  <div class="text-sm flex">
     <p class="font-bold">Comments &nbsp;:</p>
     &nbsp;&nbsp;
     <p style="white-space: pre-line">{{ comment.comments }}</p>
   </div>
   } @if (mainUI?.others1) {
-  <div class="text-sm flex mt-2">
+  <div class="text-sm flex">
     <p class="font-bold">Comments &nbsp;:</p>
     &nbsp;&nbsp;
     <p style="white-space: pre-line">{{ mainUI?.others1 }}</p>
@@ -466,13 +463,13 @@
   }
   <!-- Advice -->
   @if (advice?.advices) {
-  <div class="text-sm mt-2 flex">
+  <div class="text-sm flex">
     <p class="font-bold">Advice &nbsp;:</p>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <p style="white-space: pre-line">{{ advice.advices }}</p>
   </div>
   } @if (mainUI?.others2) {
-  <div class="text-sm mt-2 flex">
+  <div class="text-sm flex">
     <p class="font-bold">Advice &nbsp;:</p>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <p style="white-space: pre-line">{{ mainUI?.others2 }}</p>
