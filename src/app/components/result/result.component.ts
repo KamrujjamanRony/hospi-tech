@@ -84,11 +84,83 @@ export class ResultComponent implements OnInit, OnDestroy {
           this.mainUIService.getMainUI(this.id).subscribe({
             next: (response) => {
               this.mainUI = response;
+              let hbA;
+              if (this.mainUI?.hbA && this.mainUI?.hbA > 50) {
+                hbA = {
+                  type: 'splineArea',
+                  indexLabelFontSize: 9,
+                  name: 'Hb A',
+                  markerSize: 0,
+                  color: 'rgba(217, 143, 167,.9)',
+                  lineColor: 'red',
+                  lineThickness: 1,
+                  dataPoints: [
+                    { x: -999999999, y: 0 },
+                    { x: 140, y: 0 },
+                    {
+                      x: 150,
+                      y: this.mainUI?.hbA,
+                      indexLabel: "Hb A",
+                      indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 45
+                    },
+                    { x: 160, y: 7.5 },
+                    { x: 160.1, y: 7.3 },
+                    { x: 161, y: 6.5 },
+                    { x: 162, y: 5.4 },
+                    { x: 163, y: 4.8 },
+                    { x: 164, y: 4 },
+                    { x: 165, y: 3.7 },
+                    { x: 166, y: 3.4 },
+                    { x: 167, y: 3.2 },
+                    { x: 168, y: 3 },
+                    { x: 169, y: 2.8 },
+                    { x: 170, y: 2.6 },
+                    { x: 171, y: 2.4 },
+                    { x: 172, y: 2.2 },
+                    { x: 173, y: 2 },
+                    { x: 174, y: 1.8 },
+                    { x: 175, y: 1.6 },
+                    { x: 176, y: 1.4 },
+                    { x: 177, y: 1.2 },
+                    { x: 178, y: 1 },
+                    { x: 179, y: 0.8 },
+                    { x: 180, y: 0.6 },
+                    { x: 181, y: 0.4 },
+                    { x: 182, y: 0.3 },
+                    { x: 183, y: 0.2 },
+                    { x: 184, y: 0.1 },
+                    { x: 185, y: 0 },
+                    { x: 999999999, y: 0 },
+                  ],
+                }
+              } else {
+                hbA = {
+                  type: 'splineArea',
+                  indexLabelFontSize: 9,
+                  name: 'Hb A',
+                  markerSize: 0,
+                  color: 'rgba(217, 143, 167,.9)',
+                  lineColor: 'red',
+                  lineThickness: 1,
+                  dataPoints: [
+                    { x: -999999999, y: 0 },
+                    { x: 140, y: 0 },
+                    {
+                      x: 150,
+                      y: this.mainUI?.hbA,
+                      indexLabel: "Hb A",
+                      indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 45
+                    },
+                    { x: 160, y: 0 },
+                    { x: 999999999, y: 0 },
+                  ],
+                }
+              }
               // console.log(response)
               this.commentCode = response.comCode;
               this.adviceCode = response.advCode;
               this.refDoctorCode = response.refCode;
-              this.updateChartData();
+              this.updateChartData(hbA);
 
               // ----------get Ref Doctor--------------
               if (!this.refDoctor$) {
@@ -155,24 +227,24 @@ export class ResultComponent implements OnInit, OnDestroy {
   }
 
   // Set Chart Data
-  private updateChartData() {
+  private updateChartData(hbA: any) {
     // The chart start position
     this.chartOptions = {
       animationEnabled: true,
       height: 350,
-      title: {
-        text: 'Haemoglobin Electrophoresis',
-        fontSize: 20,
-      },
+      // title: {
+      //   text: 'Haemoglobin Electrophoresis',
+      //   fontSize: 20,
+      // },
       axisY: {
         // title: 'Area',
         labelFontSize: 10,
         gridColor: "lightGray",
-        maximum: 105,
-        interval: 25,
+        maximum: 104,
+        interval: 5,
       },
       axisX: {
-        // title: 'Time',
+        title: ' .',
         labelFontSize: 10,
         interval: 20,
         viewportMinimum: 0,
@@ -185,31 +257,15 @@ export class ResultComponent implements OnInit, OnDestroy {
         fontSize: 7,
       },
       data: [
-        {
-          type: 'splineArea',
-          indexLabelFontSize: 9,
-          name: 'Hb A',
-          markerSize: 0,
-          color: 'rgba(222, 49, 99,.9)',
-          dataPoints: [
-            { x: -999999999, y: 0 },
-            { x: 145, y: 0 },
-            {
-              x: 150,
-              y: this.mainUI?.hbA,
-              indexLabel: "Hb A",
-              indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 45
-            },
-            { x: 155, y: 0 },
-            { x: 999999999, y: 0 },
-          ],
-        },
+        hbA,
         {
           type: 'splineArea',
           indexLabelFontSize: 9,
           name: 'Hb F',
           markerSize: 0,
-          color: 'rgba(255, 191, 0,.9)',
+          color: 'rgba(255, 165, 0,.9)',
+          lineColor: 'red',
+          lineThickness: 1,
           dataPoints: [
             { x: -999999999, y: 0 },
             { x: 185, y: 0 },
@@ -229,6 +285,8 @@ export class ResultComponent implements OnInit, OnDestroy {
           name: 'Hb D',
           markerSize: 0,
           color: 'rgba(22,170,16,.9)',
+          lineColor: 'red',
+          lineThickness: 1,
           dataPoints: [
             { x: -999999999, y: 0 },
             { x: 205, y: 0 },
@@ -248,6 +306,8 @@ export class ResultComponent implements OnInit, OnDestroy {
           name: 'hb S',
           markerSize: 0,
           color: 'rgba(154,18,133,.9)',
+          lineColor: 'red',
+          lineThickness: 1,
           dataPoints: [
             { x: -999999999, y: 0 },
             { x: 255, y: 0 },
@@ -268,6 +328,8 @@ export class ResultComponent implements OnInit, OnDestroy {
           name: 'Hb E',
           markerSize: 0,
           color: 'rgba(128,128,128,.9)',
+          lineColor: 'red',
+          lineThickness: 1,
           dataPoints: [
             { x: -999999999, y: 0 },
             { x: 225, y: 0 },
@@ -286,7 +348,9 @@ export class ResultComponent implements OnInit, OnDestroy {
           indexLabelFontSize: 9,
           name: 'Hb A2',
           markerSize: 0,
-          color: 'rgba(94,0,226,.9)',
+          color: 'rgba(255,255,0,.9)',
+          lineColor: 'red',
+          lineThickness: 1,
           dataPoints: [
             { x: -999999999, y: 0 },
             { x: 238, y: 0 },
@@ -306,6 +370,8 @@ export class ResultComponent implements OnInit, OnDestroy {
           name: 'hb C',
           markerSize: 0,
           color: 'rgba(103, 117, 213,.9)',
+          lineColor: 'red',
+          lineThickness: 1,
           dataPoints: [
             { x: -999999999, y: 0 },
             { x: 270, y: 0 },

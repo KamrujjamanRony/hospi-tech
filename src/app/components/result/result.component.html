@@ -315,7 +315,8 @@
 </div>
 
 <div class="max-w-5xl mx-auto text-center text-black font-bold tracking-wider">
-  <h1 class="text-sm text-green-800">
+  <h1 class="text-lg text-pink-400">Haemoglobin Electrophoresis</h1>
+  <h1 class="text-sm text-blue-600">
     {{ jsonData?.title }}
   </h1>
 </div>
@@ -328,7 +329,7 @@
 >
   <canvasjs-chart [options]="chartOptions"></canvasjs-chart>
   <div
-    class="lg:w-48 md:w-32 w-32 h-5 bg-white absolute bottom-0 xl:right-[-2%] lg:right-0 right-0"
+    class="lg:w-96 w-80 h-5 bg-white absolute bottom-0 xl:right-[-2%] lg:right-0 right-0"
     [class.position-when-printing]="isPrinting"
   ></div>
 </div>
@@ -339,7 +340,7 @@
 }
 
 <!-- Table -->
-<div class="flex flex-col max-w-xl mx-auto text-black mt-5">
+<div class="flex flex-col max-w-xl mx-auto text-black">
   <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="inline-block min-w-full sm:px-6 lg:px-8">
       <div class="overflow-hidden">
@@ -417,7 +418,7 @@
             <tr
               class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
             >
-              <td class="whitespace-nowrap px-6 font-bold">Hb A<sub>2</sub></td>
+              <td class="whitespace-nowrap px-6 font-bold">Hb A2</td>
               <td class="whitespace-nowrap px-6 font-bold">
                 {{ (+mainUI.hbA2).toFixed(1) }}
               </td>

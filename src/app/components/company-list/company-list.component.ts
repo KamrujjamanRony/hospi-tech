@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { CommonModule, NgClass } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
   Validation,
@@ -15,10 +15,10 @@ import { AuthService } from '../../services/auth.service';
 import { environment } from '../../../environments/environments';
 
 @Component({
-    selector: 'app-company-list',
-    imports: [CommonModule, FormsModule, NgClass],
-    templateUrl: './company-list.component.html',
-    styleUrl: './company-list.component.css'
+  selector: 'app-company-list',
+  imports: [CommonModule, FormsModule],
+  templateUrl: './company-list.component.html',
+  styleUrl: './company-list.component.css'
 })
 export class CompanyListComponent implements OnInit, OnDestroy {
   modelCompany: any;
@@ -30,7 +30,7 @@ export class CompanyListComponent implements OnInit, OnDestroy {
   editCompanySubscription?: Subscription;
   // deleteCompanySubscription?: Subscription;
 
-  constructor( private authService: AuthService ) {
+  constructor(private authService: AuthService) {
     // Initialize modelCompany properties
     this.resetCompanyForm();
 
@@ -139,8 +139,8 @@ export class CompanyListComponent implements OnInit, OnDestroy {
     };
   }
 
-   //============================= Destroy All Subscription =============================
-   ngOnDestroy(): void {
+  //============================= Destroy All Subscription =============================
+  ngOnDestroy(): void {
     this.addCompanySubscription?.unsubscribe();
     this.editCompanySubscription?.unsubscribe();
     // this.deleteCompanySubscription?.unsubscribe();
