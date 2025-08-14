@@ -63,37 +63,39 @@ export class CompanyListComponent implements OnInit, OnDestroy {
     }
     companyData.append('Name', this.modelCompany.name);
     companyData.append('Password', this.modelCompany.password);
-    if (this.editCompanyId) {
-      this.editCompanySubscription = this.authService
-        .updateCompany(this.editCompanyId, companyData)
-        .subscribe({
-          next: () => {
-            this.companies$ = this.authService.getCompanyByNameCode();
-            this.companies$.subscribe((companies) => {
-              if (companies) {
-                this.originalCompanies = companies;
-                this.companies = companies;
-              }
-            });
-            this.editCompanyId = undefined;
-            this.resetCompanyForm();
-          },
-        });
-    } else {
-      this.addCompanySubscription = this.authService
-        .addCompany(companyData)
-        .subscribe({
-          next: () => {
-            this.companies$ = this.authService.getCompanyByNameCode();
-            this.companies$.subscribe((companies) => {
-              if (companies) {
-                this.originalCompanies = companies;
-                this.companies = companies;
-              }
-            });
-            this.resetCompanyForm();
-          }
-        });
+    if (this.modelCompany.name && this.modelCompany.password) {
+      if (this.editCompanyId) {
+        this.editCompanySubscription = this.authService
+          .updateCompany(this.editCompanyId, companyData)
+          .subscribe({
+            next: () => {
+              this.companies$ = this.authService.getCompanyByNameCode();
+              this.companies$.subscribe((companies) => {
+                if (companies) {
+                  this.originalCompanies = companies;
+                  this.companies = companies;
+                }
+              });
+              this.editCompanyId = undefined;
+              this.resetCompanyForm();
+            },
+          });
+      } else {
+        this.addCompanySubscription = this.authService
+          .addCompany(companyData)
+          .subscribe({
+            next: () => {
+              this.companies$ = this.authService.getCompanyByNameCode();
+              this.companies$.subscribe((companies) => {
+                if (companies) {
+                  this.originalCompanies = companies;
+                  this.companies = companies;
+                }
+              });
+              this.resetCompanyForm();
+            }
+          });
+      }
     }
   }
 
