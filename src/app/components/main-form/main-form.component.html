@@ -619,6 +619,26 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <!-- Hb Barts  -->
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        Hb Barts
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbBarts"
+                          name="hbBarts"
+                          [(ngModel)]="modelMainUI.hbBarts"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.hbBarts}}} @else {}
+                      </td>
+                    </tr>
                     <!-- Hb A  -->
                     <tr class="border-b border-primary-700 text-neutral-800">
                       <td class="whitespace-nowrap px-6 py-1 font-bold">

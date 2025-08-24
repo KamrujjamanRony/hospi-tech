@@ -85,7 +85,7 @@ export class ResultComponent implements OnInit, OnDestroy {
             next: (response) => {
               this.mainUI = response;
               let hbA;
-              if (this.mainUI?.hbA && this.mainUI?.hbA > 50) {
+              if (this.mainUI?.hbA && this.mainUI?.hbA > 30) {
                 hbA = {
                   type: 'splineArea',
                   indexLabelFontSize: 9,
@@ -95,42 +95,24 @@ export class ResultComponent implements OnInit, OnDestroy {
                   lineColor: 'red',
                   lineThickness: 1,
                   dataPoints: [
-                    { x: -999999999, y: 0 },
-                    { x: 140, y: 0 },
+                    { x: 130, y: 0 },
+                    { x: 147, y: 2.1 },
+                    { x: 147.95, y: 2.4 },
+                    { x: 148, y: 2.5 },
                     {
                       x: 150,
                       y: this.mainUI?.hbA,
                       indexLabel: "Hb A",
                       indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 45
                     },
-                    { x: 160, y: 7.5 },
-                    { x: 160.1, y: 7.3 },
-                    { x: 161, y: 6.5 },
-                    { x: 162, y: 5.4 },
-                    { x: 163, y: 4.8 },
-                    { x: 164, y: 4 },
-                    { x: 165, y: 3.7 },
-                    { x: 166, y: 3.4 },
-                    { x: 167, y: 3.2 },
-                    { x: 168, y: 3 },
-                    { x: 169, y: 2.8 },
-                    { x: 170, y: 2.6 },
-                    { x: 171, y: 2.4 },
-                    { x: 172, y: 2.2 },
-                    { x: 173, y: 2 },
-                    { x: 174, y: 1.8 },
-                    { x: 175, y: 1.6 },
-                    { x: 176, y: 1.4 },
-                    { x: 177, y: 1.2 },
-                    { x: 178, y: 1 },
-                    { x: 179, y: 0.8 },
-                    { x: 180, y: 0.6 },
-                    { x: 181, y: 0.4 },
-                    { x: 182, y: 0.3 },
-                    { x: 183, y: 0.2 },
-                    { x: 184, y: 0.1 },
+                    { x: 160, y: 6.5 },
+                    { x: 160.1, y: 6.3 },
+                    { x: 161, y: 5.5 },
+                    { x: 162, y: 4.0 },
+                    { x: 163, y: 3.3 },
+                    { x: 164, y: 2.8 },
+                    { x: 165, y: 2.4 },
                     { x: 185, y: 0 },
-                    { x: 999999999, y: 0 },
                   ],
                 }
               } else {
@@ -257,6 +239,27 @@ export class ResultComponent implements OnInit, OnDestroy {
         fontSize: 7,
       },
       data: [
+        {
+          type: 'splineArea',
+          indexLabelFontSize: 9,
+          name: 'Hb Barts',
+          markerSize: 0,
+          color: 'rgba(134,180,2,.9)',
+          lineColor: 'red',
+          lineThickness: 1,
+          dataPoints: [
+            { x: -999999999, y: 0 },
+            { x: 25, y: 0 },
+            {
+              x: 30,
+              y: this.mainUI?.hbBarts,
+              indexLabel: "Hb Barts",
+              indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 45
+            },
+            { x: 35, y: 0 },
+            { x: 999999999, y: 0 },
+          ],
+        },
         hbA,
         {
           type: 'splineArea',

@@ -354,6 +354,19 @@
           </thead>
           @if (mainUI) {
           <tbody>
+            @if (mainUI.hbBarts) {
+            <tr
+              class="border-b transition duration-300 ease-in-out hover:bg-neutral-100"
+            >
+              <td class="whitespace-nowrap px-6 font-bold">Hb Barts</td>
+              <td class="whitespace-nowrap px-6 font-bold">
+                {{ (+mainUI.hbBarts).toFixed(1) }}
+              </td>
+              <td class="whitespace-nowrap px-6 py-1 font-medium">
+                @if (jsonData) {{{jsonData?.hbBarts}}} @else {}
+              </td>
+            </tr>
+            }
             @if (mainUI.hbA) {
             <tr
               class="border-b transition duration-300 ease-in-out hover:bg-lime-100"
