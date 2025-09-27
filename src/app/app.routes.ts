@@ -6,6 +6,8 @@ import { CompanyListComponent } from './components/company-list/company-list.com
 import { AdminComponent } from './layouts/admin/admin.component';
 import { CountComponent } from './layouts/count/count.component';
 import { TestCountComponent } from './components/test-count/test-count.component';
+import { CustomPrintComponent } from './components/custom-print/custom-print.component';
+import { CustomFormComponent } from './components/custom-form/custom-form.component';
 
 export const routes: Routes = [
   {
@@ -21,6 +23,16 @@ export const routes: Routes = [
         path: 'result/:id',
         title: 'Result Page',
         component: ResultComponent,
+      },
+      {
+        path: 'custom-form',
+        title: 'HBA1C Entry Page',
+        component: CustomFormComponent,
+      },
+      {
+        path: 'custom-result/:id',
+        title: 'HBA1C Result Page',
+        component: CustomPrintComponent,
       },
     ],
   },

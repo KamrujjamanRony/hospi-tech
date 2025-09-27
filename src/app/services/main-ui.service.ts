@@ -10,7 +10,7 @@ export class MainUIService {
 
   constructor(private http: HttpClient) { }
 
-  addMainUI(model: any | FormData): Observable<void>{
+  addMainUI(model: any | FormData): Observable<void> {
     return this.http.post<void>(environment.MainUIApi, model)
   }
 
@@ -18,23 +18,32 @@ export class MainUIService {
     return this.http.get<any[]>(environment.MainUIApi);
   }
 
-  getCompanyMainUIs(companyID: any): Observable<any[]> {
-    return this.http.get<any[]>(`${environment.MainUIApi}/GetCompanyId?filterOn=CompanyID&filterQuery=${companyID}`);
+  // getCompanyMainUIs(companyID: any): Observable<any[]> {
+  //   return this.http.get<any[]>(`${environment.MainUIApi}/GetCompanyId?filterOn=CompanyID&filterQuery=${companyID}`);
+  // }
+
+  getCompanyMainUIs(companyID: any, date: any): Observable<any[]> {
+    const formattedDate = date ? new Date(date).toISOString().split('T')[0] : '';
+    const reqData = {
+      CompanyID: companyID,
+      Date: formattedDate
+    }
+    return this.http.post<any[]>(`${environment.MainUIApi}/GetCompanyMainUIbyID`, reqData);
   }
 
-  getMainUI(id: string): Observable<any>{
+  getMainUI(id: string): Observable<any> {
     return this.http.get<any>(`${environment.MainUIApi}/GetMainUIById?id=${id}`);
   }
 
-  updateMainUI(id: string, updateMainUIRequest: any | FormData): Observable<any>{
+  updateMainUI(id: string, updateMainUIRequest: any | FormData): Observable<any> {
     return this.http.put<any>(`${environment.MainUIApi}/EditMainUI/${id}`, updateMainUIRequest);
   }
 
-  deleteMainUI(id: string): Observable<any>{
+  deleteMainUI(id: string): Observable<any> {
     return this.http.delete<any>(`${environment.MainUIApi}/DeleteMainUI?id=${id}`);
   }
 
-  companyWiseTest( data: any | FormData ): Observable<any>{
+  companyWiseTest(data: any | FormData): Observable<any> {
     return this.http.post<any>(`${environment.MainUIApi}/GetCompanyIDwiseTotal`, data);
   }
 }

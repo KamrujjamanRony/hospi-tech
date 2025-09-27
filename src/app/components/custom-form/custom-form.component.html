@@ -75,16 +75,13 @@
                 </button>
               </li>
               <li>
-                <!-- Button trigger modal for Advice -->
+                <!-- Button trigger modal for Comments-->
                 <button
+                  routerLink=""
                   type="button"
-                  class="inline-block rounded bg-sky-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-sky-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-sky-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-sky-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] my-1 text-center"
-                  data-te-toggle="modal"
-                  data-te-target="#setAdvice"
-                  data-te-ripple-init
-                  data-te-ripple-color="light"
+                  class="inline-block rounded bg-teal-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-teal-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-teal-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-teal-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] my-1 text-center"
                 >
-                  Set Advice
+                  Back Home
                 </button>
               </li>
             </ul>
@@ -137,29 +134,18 @@
               </button>
             </li>
             <li>
-              <!-- Button trigger modal for Advice -->
+              <!-- Button trigger modal for Comments-->
               <button
+                routerLink=""
                 type="button"
-                class="inline-block rounded bg-sky-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-sky-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-sky-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-sky-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] mx-1"
-                data-te-toggle="modal"
-                data-te-target="#setAdvice"
-                data-te-ripple-init
-                data-te-ripple-color="light"
+                class="inline-block rounded bg-teal-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-teal-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-teal-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-teal-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] mx-1"
               >
-                Set Advice
+                Back Home
               </button>
             </li>
           </ul>
         </div>
         <div class="navbar-end">
-          <!-- HB Button -->
-          <a
-            type="button"
-            routerLink="/custom-form"
-            class="inline-block rounded text-white font-extrabold bg-orange-500 md:px-6 px-2 py-1 text-lg uppercase leading-normal shadow-[0_4px_9px_-4px_#cbcbcb] transition duration-150 ease-in-out cursor-pointer hover:bg-orange-600 hover:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] focus:bg-orange-600 focus:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] focus:outline-none focus:ring-0 active:bg-orange-700 active:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)]"
-          >
-            H
-          </a>
           <!-- Form submit button -->
           <button
             data-te-submit-btn-ref
@@ -300,7 +286,7 @@
           <div
             class="break-words rounded-b-lg bg-danger-100 px-4 py-4 text-danger-700"
           >
-            Patient ID, Patient Name & Patient Age is Required.
+            Patient ID, Patient Name, Patient Age & HBA1C is Required.
           </div>
         </div>
         }
@@ -625,201 +611,24 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <!-- Hb Barts  -->
+                    <!-- others3 -->
                     <tr class="border-b border-primary-700 text-neutral-800">
                       <td class="whitespace-nowrap px-6 py-1 font-bold">
-                        Hb Barts
+                        HbA1c
                       </td>
                       <td class="whitespace-nowrap px-6 py-1 font-medium">
                         <input
                           autocomplete="off"
                           type="number"
-                          id="hbBarts"
-                          name="hbBarts"
-                          [(ngModel)]="modelMainUI.hbBarts"
+                          id="others3"
+                          name="others3"
+                          [(ngModel)]="modelMainUI.others3"
                           (focus)="onOtherFocus()"
                           class="border-2 w-24 border-secondary-900"
                         />
                       </td>
                       <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        @if (jsonData) {{{jsonData?.hbBarts}}} @else {}
-                      </td>
-                    </tr>
-                    <!-- Hb A  -->
-                    <tr class="border-b border-primary-700 text-neutral-800">
-                      <td class="whitespace-nowrap px-6 py-1 font-bold">
-                        Hb A
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        <input
-                          autocomplete="off"
-                          type="number"
-                          id="hbA"
-                          name="hbA"
-                          [(ngModel)]="modelMainUI.hbA"
-                          (focus)="onOtherFocus()"
-                          class="border-2 w-24 border-secondary-900"
-                        />
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        @if (jsonData) {{{jsonData?.hbA}}} @else {96.1-98.5}
-                      </td>
-                    </tr>
-                    <!-- Hb F  -->
-                    <tr class="border-b border-primary-700 text-neutral-800">
-                      <td class="whitespace-nowrap px-6 py-1 font-bold">
-                        Hb F
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        <input
-                          autocomplete="off"
-                          type="number"
-                          id="hbF"
-                          name="hbF"
-                          [(ngModel)]="modelMainUI.hbF"
-                          (focus)="onOtherFocus()"
-                          class="border-2 w-24 border-secondary-900"
-                        />
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        @if (jsonData) {{{jsonData?.hbF}}} @else {<2}
-                      </td>
-                    </tr>
-                    <!-- Hb D  -->
-                    <tr class="border-b border-primary-700 text-neutral-800">
-                      <td class="whitespace-nowrap px-6 py-1 font-bold">
-                        Hb D
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        <input
-                          autocomplete="off"
-                          type="number"
-                          id="hbD"
-                          name="hbD"
-                          [(ngModel)]="modelMainUI.hbD"
-                          (focus)="onOtherFocus()"
-                          class="border-2 w-24 border-secondary-900"
-                        />
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        @if (jsonData) {{{jsonData?.hbD}}} @else {}
-                      </td>
-                    </tr>
-                    <!-- Hb S  -->
-                    <tr class="border-b border-primary-700 text-neutral-800">
-                      <td class="whitespace-nowrap px-6 py-1 font-bold">
-                        Hb S
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        <input
-                          autocomplete="off"
-                          type="number"
-                          id="hbS"
-                          name="hbS"
-                          [(ngModel)]="modelMainUI.hbS"
-                          (focus)="onOtherFocus()"
-                          class="border-2 w-24 border-secondary-900"
-                        />
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        @if (jsonData) {{{jsonData?.hbS}}} @else {}
-                      </td>
-                    </tr>
-                    <!-- Hb E  -->
-                    <tr class="border-b border-primary-700 text-neutral-800">
-                      <td class="whitespace-nowrap px-6 py-1 font-bold">
-                        Hb E
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        <input
-                          autocomplete="off"
-                          type="number"
-                          id="hbE"
-                          name="hbE"
-                          [(ngModel)]="modelMainUI.hbE"
-                          (focus)="onOtherFocus()"
-                          class="border-2 w-24 border-secondary-900"
-                        />
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        @if (jsonData) {{{jsonData?.hbE}}} @else {}
-                      </td>
-                    </tr>
-                    <!-- Hb A2  -->
-                    <tr class="border-b border-primary-700 text-neutral-800">
-                      <td class="whitespace-nowrap px-6 py-1 font-bold">
-                        Hb A2
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        <input
-                          autocomplete="off"
-                          type="number"
-                          id="hbA2"
-                          name="hbA2"
-                          [(ngModel)]="modelMainUI.hbA2"
-                          (focus)="onOtherFocus()"
-                          class="border-2 w-24 border-secondary-900"
-                        />
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        @if (jsonData) {{{jsonData?.hbA2}}} @else {2.2-4.0}
-                      </td>
-                    </tr>
-                    <!-- Hb C  -->
-                    <tr class="border-b border-primary-700 text-neutral-800">
-                      <td class="whitespace-nowrap px-6 py-1 font-bold">
-                        Hb C
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        <input
-                          autocomplete="off"
-                          type="number"
-                          id="hbC"
-                          name="hbC"
-                          [(ngModel)]="modelMainUI.hbC"
-                          (focus)="onOtherFocus()"
-                          class="border-2 w-24 border-secondary-900"
-                        />
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        @if (jsonData) {{{jsonData?.hbC}}} @else {}
-                      </td>
-                    </tr>
-                    <!-- Hb -->
-                    <tr class="border-b border-primary-700 text-neutral-800">
-                      <td class="whitespace-nowrap px-6 py-1 font-bold">Hb</td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        <input
-                          autocomplete="off"
-                          type="number"
-                          id="hb"
-                          name="hb"
-                          [(ngModel)]="modelMainUI.hb"
-                          (focus)="onOtherFocus()"
-                          class="border-2 w-24 border-secondary-900"
-                        />
-                      </td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        @if (jsonData) {{{jsonData.hb}}}
-                      </td>
-                    </tr>
-                    <tr class="border-b border-primary-700 text-neutral-800">
-                      <td class="whitespace-nowrap px-6 py-1 font-bold"></td>
-                      <td class="whitespace-nowrap px-6 py-1 font-medium">
-                        Total =
-                        {{
-                          (
-                            +modelMainUI.hbBarts +
-                            +modelMainUI.hbF +
-                            +modelMainUI.hbJ +
-                            +modelMainUI.hbA +
-                            +modelMainUI.hbL +
-                            +modelMainUI.hbA2 +
-                            +modelMainUI.hbE +
-                            +modelMainUI.hbD +
-                            +modelMainUI.hbS
-                          ).toFixed(1)
-                        }}
+                        @if (jsonData) {{{jsonData?.others3}}} @else {}
                       </td>
                     </tr>
                   </tbody>
@@ -829,111 +638,14 @@
           </div>
         </div>
 
-        <!-- Show toast -->
-        @if ((+modelMainUI.hbA) + (+modelMainUI.hbF) + (+modelMainUI.hbD) +
-        (+modelMainUI.hbE) + (+modelMainUI.hbA2) + (+modelMainUI.hbJ) +
-        (+modelMainUI.hbL) + (+modelMainUI.hbQ) + (+modelMainUI.hbS) +
-        (+modelMainUI.hbBarts) > 100.05) {
-        <div
-          class="pointer-events-auto mx-auto mb-4 hidden w-96 max-w-full rounded-lg bg-warning-100 bg-clip-padding text-sm text-warning-700 shadow-lg shadow-black/5 data-[te-toast-show]:block data-[te-toast-hide]:hidden"
-          id="static-example"
-          role="alert"
-          aria-live="assertive"
-          aria-atomic="true"
-          data-te-autohide="false"
-          data-te-toast-init
-          data-te-toast-show
-        >
-          <div
-            class="flex items-center justify-between rounded-t-lg border-b-2 border-warning-200 bg-warning-100 bg-clip-padding px-4 pb-2 pt-2.5 text-warning-700"
-          >
-            <p class="flex items-center font-bold text-warning-700">
-              <span class="mr-2 h-4 w-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </span>
-              Result Not Valid! Maximum Result will be 100.
-            </p>
-          </div>
-        </div>
-        }
-
         <!-- Input Row 04 -->
         <div
           class="w-full flex md:flex-row flex-col gap-2 md:gap-5 mb-2 md:mb-0 mt-2 md:mt-0"
         >
           <!-- Comment Selection -->
-          <!-- <div class="md:col-span-2">
-            <div class="flex items-end space-x-4">
-              <div class="flex-1">
-                <label class="block text-sm font-medium text-gray-700 mb-0.5">
-                  Comment
-                </label>
-
-                @if (!showAddCommentInput()) {
-                <select
-                  [(ngModel)]="modelMainUI.comCode"
-                  name="comment"
-                  class="w-full px-3 py-2 border border-gray-300 rounded-md"
-                >
-                  <option [value]="undefined">---Select---</option>
-                  @for (comment of comments; track comment.id) {
-                  <option [value]="comment.code">{{ comment.comments }}</option>
-                  }
-                </select>
-                } @if (showAddCommentInput()) {
-                <div class="space-y-2">
-                  <input
-                    type="text"
-                    [value]="newCommentName()"
-                    (input)="newCommentName.set($any($event.target).value)"
-                    class="w-full px-3 py-2 border border-gray-300 rounded-md"
-                    placeholder="Enter new comment name"
-                    (keyup.enter)="addNewComment()"
-                  />
-                  <div class="flex space-x-2">
-                    <button
-                      type="button"
-                      (click)="addNewComment()"
-                      class="px-4 py-1 bg-green-500 text-white text-sm rounded"
-                    >
-                      Save
-                    </button>
-                    <button
-                      type="button"
-                      (click)="showAddCommentInput.set(false)"
-                      class="px-4 py-1 bg-gray-500 text-white text-sm rounded"
-                    >
-                      Cancel
-                    </button>
-                  </div>
-                </div>
-                }
-              </div>
-
-              @if (!showAddCommentInput()) {
-              <button
-                type="button"
-                (click)="showAddCommentInput.set(true)"
-                class="px-6 py-2 bg-blue-500 text-white rounded-md"
-              >
-                Add New
-              </button>
-              }
-            </div>
-          </div> -->
 
           <!-- comment -->
-          <div class="w-full md:w-1/2">
+          <div class="w-full">
             <div class="mb:mb-3 mb-1">
               <select
                 id="comment"
@@ -961,36 +673,6 @@
               >
             </div>
           </div>
-
-          <!-- advice -->
-          <div class="w-full md:w-1/2">
-            <div class="mb:mb-3 mb-1">
-              <select
-                id="advice"
-                name="advice"
-                [(ngModel)]="modelMainUI.advCode"
-                (focus)="onOtherFocus()"
-                (keydown)="handleKeydown($event)"
-                data-te-select-init
-                data-te-select-filter="true"
-              >
-                <option value="0">Select Advice</option>
-                @for (item of advices; track item?.id) {
-                <option
-                  value="{{ item.code }}"
-                  [attr.selected]="
-                    modelMainUI.advCode == item.code ? true : null
-                  "
-                >
-                  {{ item.code }}---{{ item.advices }}
-                </option>
-                }
-              </select>
-              <label for="advice" data-te-select-label-ref class="text-primary"
-                >Advice</label
-              >
-            </div>
-          </div>
         </div>
         <!-- Input Row 05 -->
         <div
@@ -1015,25 +697,6 @@
               ></textarea>
             </div>
           </div>
-          <!-- others2 -->
-          <div class="mt-3 w-full">
-            <div class="relative mb-4" data-te-input-wrapper-init>
-              <label
-                for="others2"
-                class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
-                >Advice
-              </label>
-              <textarea
-                class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
-                id="others2"
-                name="others2"
-                autocomplete="off"
-                rows="3"
-                placeholder="Type Comment"
-                [(ngModel)]="modelMainUI.others2"
-              ></textarea>
-            </div>
-          </div>
         </div>
 
         <div class="pb-1 pt-1 text-center">
@@ -1042,19 +705,7 @@
             type="submit"
             data-te-submit-btn-ref
             Validate
-            [disabled]="
-              +modelMainUI.hbA +
-                +modelMainUI.hbF +
-                +modelMainUI.hbD +
-                +modelMainUI.hbE +
-                +modelMainUI.hbA2 +
-                +modelMainUI.hbJ +
-                +modelMainUI.hbQ +
-                +modelMainUI.hbS +
-                +modelMainUI.hbC +
-                +modelMainUI.hbBarts >
-              100.05
-            "
+            [disabled]="!modelMainUI.others3"
             data-te-ripple-init
             data-te-ripple-color="light"
             style="
@@ -1470,212 +1121,6 @@
                             </button>
                             <button
                               (click)="onDeleteComment(data.id)"
-                              type="button"
-                              class="inline-block rounded bg-danger px-3 pb-1 pt-1 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)]"
-                            >
-                              Delete
-                            </button>
-                          </td>
-                        </tr>
-                        }
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-            }
-          </div>
-        </div>
-        <div
-          class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4"
-        >
-          <button
-            type="button"
-            class="inline-block rounded bg-sky-100 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-sky-accent-100 focus:bg-sky-accent-100 focus:outline-none focus:ring-0 active:bg-sky-accent-200"
-            data-te-modal-dismiss
-            data-te-ripple-init
-            data-te-ripple-color="light"
-          >
-            Close
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal for Advice -->
-  <div
-    data-te-modal-init
-    class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
-    id="setAdvice"
-    tabindex="-1"
-    aria-labelledby="exampleModalScrollableLabel"
-    aria-hidden="true"
-  >
-    <div
-      data-te-modal-dialog-ref
-      class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:my-7 min-[700px]:max-w-[1200px]"
-    >
-      <div
-        class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none"
-      >
-        <div
-          class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4"
-        >
-          <h5
-            class="text-xl font-medium leading-normal text-neutral-800"
-            id="exampleModalLabel"
-          >
-            Set Advice
-          </h5>
-          <button
-            type="button"
-            class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
-            data-te-modal-dismiss
-            aria-label="Close"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="h-6 w-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="relative flex-auto p-4" data-te-modal-body-ref>
-          <div class="w-full mx-auto">
-            <!-- Advice Form -->
-            <form #form="ngForm" (ngSubmit)="onAdviceFormSubmit()">
-              <p class="mb-4">Please Add a Advice</p>
-              <!--Advice Code input-->
-              <div>
-                <div class="relative mb-4" data-te-input-wrapper-init>
-                  <label
-                    for="AdviceCode"
-                    class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
-                    >Advice Code
-                  </label>
-                  <input
-                    autocomplete="off"
-                    type="text"
-                    name="code"
-                    class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
-                    id="AdviceCode"
-                    placeholder="Advice Code"
-                    [(ngModel)]="modelAdvice.code"
-                  />
-                </div>
-              </div>
-
-              <!--Doctor Name input-->
-              <div>
-                <div class="relative mb-4" data-te-input-wrapper-init>
-                  <label
-                    for="Advice"
-                    class="absolute left-3 top-0 max-w-[90%] origin-[0_0] translate-y-[-0.7rem] scale-[0.8] text-primary bg-white px-2 z-10"
-                    >Advice
-                  </label>
-                  <textarea
-                    class="block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none relative"
-                    id="Advice"
-                    name="advices"
-                    autocomplete="off"
-                    rows="3"
-                    placeholder="Advice"
-                    [(ngModel)]="modelAdvice.advices"
-                  ></textarea>
-                </div>
-              </div>
-
-              <div class="flex gap-2">
-                <!--Submit button-->
-                <button
-                  class="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
-                  type="submit"
-                  data-te-ripple-init
-                  data-te-ripple-color="light"
-                  style="
-                    background: linear-gradient(
-                      to right,
-                      #82f3e7,
-                      #6ff1aa,
-                      #4ef356,
-                      #4cd389
-                    );
-                  "
-                >
-                  @if (editAdviceId) {Update Advice} @else {Add Advice}
-                </button>
-                <!--Reset button-->
-                <button
-                  (click)="resetAdviceForm()"
-                  class="mb-3 inline-block w-1/5 rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
-                  type="button"
-                  data-te-ripple-init
-                  data-te-ripple-color="light"
-                  style="
-                    background: linear-gradient(
-                      to right,
-                      #82f3e7,
-                      #6ff1aa,
-                      #4ef356,
-                      #4cd389
-                    );
-                  "
-                >
-                  Reset
-                </button>
-              </div>
-            </form>
-
-            <!-- Advice's List -->
-            @if(advices$){
-            <div class="flex flex-col">
-              <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                  <h3 class="text-center font-bold border-b-2 border-gray-500">
-                    Advice's List
-                  </h3>
-                  <div class="overflow-hidden">
-                    <table class="min-w-full text-left text-sm font-light">
-                      <thead class="border-b bg-white font-medium">
-                        <tr>
-                          <th scope="col" class="px-6 py-1">Code</th>
-                          <th scope="col" class="px-6 py-1">Advice</th>
-                          <th scope="col" class="px-6 py-1">Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @for(data of advices$ | async; track data.id){
-                        <tr class="border-b bg-sky-100">
-                          <td class="whitespace-nowrap px-6 py-1">
-                            {{ data?.code }}
-                          </td>
-                          @if (data?.advices) {
-                          <td class="whitespace-nowrap px-6 py-1">
-                            {{ data.advices.slice(0, 30) }}
-                            @if (data.advices.length > 30) {...}
-                          </td>
-                          }
-                          <td class="whitespace-nowrap px-6 py-1">
-                            <button
-                              (click)="onEditAdvice(data.id)"
-                              type="button"
-                              class="inline-block rounded bg-warning px-3 pb-1 mr-2 pt-1 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#e4a11b] transition duration-150 ease-in-out hover:bg-warning-600 hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:bg-warning-600 focus:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)] focus:outline-none focus:ring-0 active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)]"
-                            >
-                              Edit
-                            </button>
-                            <button
-                              (click)="onDeleteAdvice(data.id)"
                               type="button"
                               class="inline-block rounded bg-danger px-3 pb-1 pt-1 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc4c64] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:bg-danger-600 focus:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)] focus:outline-none focus:ring-0 active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)]"
                             >

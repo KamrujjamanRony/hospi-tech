@@ -32,12 +32,12 @@ import { CommentService } from '../../services/comment.service';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-main-form',
+  selector: 'app-custom-form',
   imports: [CommonModule, FormsModule, NgClass, ReactiveFormsModule, RouterLink],
-  templateUrl: './main-form.component.html',
-  styleUrl: './main-form.component.css'
+  templateUrl: './custom-form.component.html',
+  styleUrl: './custom-form.component.css'
 })
-export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
+export class CustomFormComponent {
   dataService = inject(DataService);
   isError: boolean = false;
   loading = signal(true);
@@ -499,7 +499,6 @@ export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
         editData.forEach((value, key) => {
           jsonObject[key] = value;
         });
-        // console.log(JSON.stringify(jsonObject, null, 2));
         // Update MainUI by Id
         this.editMainUISubscription = this.mainUIService
           .updateMainUI(this.editMainUIId, editData)
@@ -516,7 +515,7 @@ export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
                 this.loading.set(false);
               });
               this.router
-                .navigateByUrl(`result/${this.editMainUIId}`)
+                .navigateByUrl(`/custom-result/${this.editMainUIId}`)
                 .then(() => {
                   this.editMainUIId = undefined;
                 });
@@ -543,7 +542,7 @@ export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
                 this.loading.set(false);
               });
               this.resetMainForm();
-              this.router.navigateByUrl(`result/${id}`).then(() => { });
+              this.router.navigateByUrl(`/custom-result/${id}`).then(() => { });
             },
             error: (error) => {
               console.log('Error adding Form Data:', error);
@@ -1121,4 +1120,5 @@ export class MainFormComponent implements OnInit, OnDestroy, AfterViewInit {
     this.deleteCommentSubscription?.unsubscribe();
     this.deleteAdviceSubscription?.unsubscribe();
   }
+
 }
