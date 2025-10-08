@@ -24,11 +24,10 @@ export class MainUIService {
 
   getCompanyMainUIs(companyID: any, date: any): Observable<any[]> {
     const formattedDate = date ? new Date(date).toISOString().split('T')[0] : '';
-    const reqData = {
-      CompanyID: companyID,
-      Date: formattedDate
-    }
-    return this.http.post<any[]>(`${environment.MainUIApi}/GetCompanyMainUIbyID`, reqData);
+    const formData = new FormData();
+    formData.append('CompanyID', companyID);
+    formData.append('Date', formattedDate);
+    return this.http.post<any[]>(`${environment.MainUIApi}/GetCompanyMainUIbyID`, formData);
   }
 
   getMainUI(id: string): Observable<any> {
